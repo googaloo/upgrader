@@ -1,0 +1,1588 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"JSON",
+				"json_decode"
+			],
+			[
+				"ft",
+				"ft-img-url-field"
+			],
+			[
+				"art-",
+				"art-dept"
+			],
+			[
+				"saved-dra",
+				"saved-draft-id"
+			],
+			[
+				"saved_",
+				"saved_drafts_list"
+			],
+			[
+				"save_template",
+				"save_template_model"
+			],
+			[
+				"serial",
+				"serializeArray"
+			],
+			[
+				"border",
+				"border-spacing"
+			],
+			[
+				"view",
+				"view_btn_url"
+			],
+			[
+				"wa",
+				"watch_btn_url"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"hea",
+				"header	Tag"
+			],
+			[
+				"hexagonT",
+				"hexagonTarget"
+			],
+			[
+				"hexagon",
+				"hexagon1"
+			],
+			[
+				"after",
+				"after-banner-bucket"
+			],
+			[
+				"need_to",
+				"need_to_know"
+			],
+			[
+				"vol",
+				"vol_iss"
+			],
+			[
+				"after_",
+				"after_art_bucket"
+			],
+			[
+				"write",
+				"write_file"
+			],
+			[
+				"art",
+				"artCount"
+			],
+			[
+				"select-art-",
+				"select-art-dept"
+			],
+			[
+				"need_t",
+				"need_to_know"
+			],
+			[
+				"update",
+				"updatePreview"
+			],
+			[
+				"need",
+				"needKnow1"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"need_to_kno",
+				"need_to_know_header"
+			],
+			[
+				"rotating",
+				"rotating_banner_link"
+			],
+			[
+				"fee",
+				"feedback_link"
+			],
+			[
+				"sec",
+				"secondary_color"
+			],
+			[
+				"ft_ar",
+				"ft_art_body"
+			],
+			[
+				"inlin",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 772,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/game.js",
+			"settings":
+			{
+				"buffer_size": 4980,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/player.js",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"pacagin",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"packin",
+				"Package Control: Install Package"
+			],
+			[
+				"packainst",
+				"Package Control: Install Package"
+			],
+			[
+				"packinst",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"syntahtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"synta",
+				"Set Syntax: PHP"
+			],
+			[
+				"syntactio",
+				"Set Syntax: ActionScript"
+			],
+			[
+				"synjava",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"packagein",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"syntaxjso",
+				"Set Syntax: JSON"
+			],
+			[
+				"syntaxjac",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syntaxph",
+				"Set Syntax: PHP"
+			],
+			[
+				"consol",
+				"Set Syntax: R Console"
+			],
+			[
+				"paca",
+				"Package Control: Install Package"
+			],
+			[
+				"packain",
+				"Package Control: Install Package"
+			],
+			[
+				"packageinst",
+				"Package Control: Install Package"
+			],
+			[
+				"packaginst",
+				"Package Control: Install Package"
+			],
+			[
+				"packinsta",
+				"Package Control: Install Package"
+			],
+			[
+				"package control install",
+				"Package Control: Install Package"
+			],
+			[
+				"syntaxphp",
+				"Set Syntax: PHP"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"toggl",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"toggle mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"toggle min",
+				"View: Toggle Minimap"
+			],
+			[
+				"javascript",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/MAMP/htdocs/upgrader/assets/cave_tilemap.json",
+		"/Applications/MAMP/htdocs/upgrader/js/phaser.min.js",
+		"/Applications/MAMP/htdocs/phaser_tutorial_02/part7.html",
+		"/Applications/MAMP/htdocs/phaser_tutorial_02/part6.html",
+		"/Applications/MAMP/htdocs/phaser_tutorial_02/part5.html",
+		"/Applications/MAMP/htdocs/phaser_tutorial_02/part2.html",
+		"/Applications/MAMP/bin/php/php5.4.4/conf/php.ini",
+		"/Users/rlodom/Desktop/index.html",
+		"/Users/rlodom/Desktop/config.php",
+		"/Users/rlodom/Desktop/121213_Ping_draft.html",
+		"/Users/rlodom/Desktop/121113_Wade_Chicago_Vegas_RolloutIntro.html",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/articles.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/apollo_advisor_custom_footer.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/css/scss/_generator.scss",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/apollo_copyright.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/line_divider.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/image_divider.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/save_template_model.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/controllers/home.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/views/home_view.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/js/home.js",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/libraries/newsletters.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/controllers/generator.php",
+		"/Users/rlodom/Desktop/121113_UOPX_Advisor.html",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/js/generator.js",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/controllers/create_mail.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/rotating_banner.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/the_express_custom_footer.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/libraries/emails.php",
+		"/Users/rlodom/Desktop/ggggggg.html",
+		"/Users/rlodom/Desktop/ffffff.html",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/date_vol_iss.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Date_vol_iss.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/ping_custom_footer.php",
+		"/Users/rlodom/Desktop/new_gen.html",
+		"/Users/rlodom/Desktop/old_gen.html",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/css/scss/_variables.scss",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/css/scss/style.scss",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/views/includes/header.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules_model.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/views/includes/template.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/config/autoload.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/config/config.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Top_date.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Top_title_date.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Email_title.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/controllers/Create_mail.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Publish_date.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Articles_with_dept.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Image_divider.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/views/inputs_view.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Email_body.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/controllers/Generator.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/libraries/Newsletters.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Email_banners.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/libraries/Emails.php",
+		"/Users/rlodom/Desktop/Ping_Special_Draft_103113.html",
+		"/Users/rlodom/Desktop/cardholder_connection.html",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/.htaccess",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/.htaccess",
+		"/Users/rlodom/Desktop/cheese/config.php",
+		"/Users/rlodom/Desktop/cheese/.htaccess",
+		"/Users/rlodom/Desktop/cheese/database.php",
+		"/Users/rlodom/Desktop/cheese/routes.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/config/database.php",
+		"/Users/rlodom/Desktop/database.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/config/constants.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/config/routes.php",
+		"/Users/rlodom/Desktop/index.php",
+		"/Users/rlodom/Desktop/cheese/index.php",
+		"/Users/rlodom/Desktop/.htaccess",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/controllers/Home.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/css/scss/_home-page.scss",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/views/upload-banner-image.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Articles.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/views/uploaded-ft-image.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/views/uploaded-banner-image.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/views/uploaded-banner-image-draft.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/views/uploaded-ft-image-draft.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/views/upload-ft-image.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/Save_template_model.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/views/includes/footer.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/views/preview.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/css/scss/_preview.scss",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Featured_article.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Apollo_copyright.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/created_and_preview/preview.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/Modules_markup_and_logic.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/created_page/preview.php",
+		"/Users/rlodom/Desktop/cURL_Basecamp_API_example.php",
+		"/Applications/MAMP/htdocs/rustin-portfolio/cURL_Basecamp_API_example.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Rotating_banner.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Need_to_know_list.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/Modules_model.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Apollo_advisor_custom_footer.php",
+		"/Volumes/campus/C-APO-Corporate/Public Affairs/Creative Services/Rusty/Resources/templates/WIU_template.html",
+		"/Users/rlodom/Desktop/092513_Apollo_Advisor.html",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/uopx_advisor_custom_footer.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Ping_custom_footer.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Need_to_know_image_header.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/The_express_custom_footer.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Line_divider.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Featured_article_header_image.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/index.html",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/index.html",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/css/scss/_global.scss",
+		"/Users/rlodom/Desktop/090513_Joe_D_Retirement_Note_to_Staff.html",
+		"/Users/rlodom/Desktop/University-of-Phoenix-Strategy-Template.html",
+		"/Users/rlodom/Desktop/090613_UOPX_LeaderView.html",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/config/s3.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/libraries/S3.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/css/style.css",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/The_express_date_vol_iss.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Banner.php",
+		"/Users/rlodom/Desktop/foundation-4.3.1/css/foundation.css",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/The_express_divider.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/css/foundation.min.css",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/The_express_banner.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/The_express_need_to_know_header.php",
+		"/Users/rlodom/Desktop/style.css",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/includes/modules/Top_title_date.php",
+		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/Top_title_date.php",
+		"/Applications/MAMP/bin/php/php5.3.14/conf/php.ini",
+		"/Applications/MAMP/bin/php/php5.2.17/conf/php.ini",
+		"/Users/rlodom/Desktop/University-of-Phoenix-New-Strategy-Template.html",
+		"/Users/rlodom/Desktop/throw_away_html",
+		"/Users/rlodom/Desktop/throw_away.html",
+		"/Users/rlodom/Desktop/haxe_test/Test.hx"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"8",
+			"225",
+			"5",
+			"8",
+			"175",
+			"12",
+			"velocity",
+			"world",
+			"1",
+			"0",
+			"jumpCount",
+			"15s",
+			"25s",
+			"translate",
+			"scale",
+			"cloud",
+			"id=\"cloud1\"",
+			"0",
+			"use",
+			"background",
+			"style",
+			"name",
+			"div",
+			"\ndiv",
+			"div",
+			"ajax",
+			"oct",
+			"img",
+			"oct",
+			"learn",
+			"volume",
+			"patent",
+			"oct",
+			"b5c",
+			"b5cb00",
+			"content",
+			"newsletters",
+			"consol",
+			"banner-img-url",
+			"submit",
+			"load",
+			"load\nload",
+			"load",
+			"load\n\nload",
+			"artCount",
+			"artCount\n",
+			"artCount",
+			"create",
+			"border",
+			"[]",
+			"check",
+			"prop",
+			"create",
+			"create\n\n\ncreate",
+			"artCount",
+			"artCount\n\n\n\n\nartCount\nartCount",
+			"artcount",
+			"createArticle",
+			"create",
+			"num-articles",
+			"num",
+			"submi",
+			"testObj",
+			"volume",
+			"ajax",
+			"boop",
+			"val",
+			"consol",
+			"console.log",
+			"coo",
+			"cool",
+			"display",
+			"saved-draft-success",
+			"animation",
+			"click",
+			"num",
+			"datepicker",
+			"submit",
+			"content",
+			"window.content",
+			"create",
+			"submit",
+			"create",
+			"ate partners, a trib",
+			"2566",
+			"border",
+			"submit",
+			"content",
+			"content\n\n\n\n",
+			"content",
+			"<td valign=\"top\">&bull;</td>",
+			"<td>&bull;</td>",
+			"main-head",
+			"feat-img-url",
+			"border-sp",
+			".generator-submit",
+			"input",
+			"hover",
+			"button",
+			"rotating",
+			"allow_url_include",
+			"allow_url_fopen",
+			"ini",
+			"title",
+			"\\n",
+			" ",
+			"\\n",
+			"content",
+			"'",
+			"get_module",
+			"assets",
+			"'",
+			"book",
+			"books_query",
+			"feat_query",
+			"top-featu",
+			"hexagon[ranHex]",
+			"1",
+			"hexagon1",
+			"EEEEEE",
+			"hexegon",
+			"blur",
+			"-",
+			"boxblurfilte",
+			"boxblurfilter",
+			"displayobject",
+			"$bucket",
+			"$bucket\n\n\n\n\n\n\n\n\n$bucket"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"<td valign=\"top\" class=\"bullet\">&bull;</td>",
+			"<td valign=\"top\">&bull;</td>",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 772,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								395,
+								395
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/game.js",
+					"settings":
+					{
+						"buffer_size": 4980,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3641,
+								3641
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2031.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/player.js",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"json",
+				"assets/cave_tilemap.json"
+			],
+			[
+				"phas",
+				"js/phaser.min.js"
+			],
+			[
+				"emailban",
+				"application/models/modules/email_banners.php"
+			],
+			[
+				"config",
+				"application/config/config.php"
+			],
+			[
+				"save",
+				"application/models/save_template_model.php"
+			],
+			[
+				"datevo",
+				"application/models/modules/date_vol_iss.php"
+			],
+			[
+				"toptit",
+				"application/models/modules/top_title_date.php"
+			],
+			[
+				"new",
+				"application/libraries/newsletters.php"
+			],
+			[
+				"create",
+				"application/controllers/create_mail.php"
+			],
+			[
+				"email",
+				"application/libraries/emails.php"
+			],
+			[
+				"need",
+				"application/models/modules/need_to_know_list.php"
+			],
+			[
+				"newsle",
+				"application/libraries/newsletters.php"
+			],
+			[
+				"",
+				"application/models/modules/the_express_custom_footer.php"
+			],
+			[
+				"artic",
+				"application/models/modules/articles.php"
+			],
+			[
+				"news",
+				"application/libraries/newsletters.php"
+			],
+			[
+				"articl",
+				"application/models/modules/articles.php"
+			],
+			[
+				"date",
+				"application/models/modules/date_vol_iss.php"
+			],
+			[
+				"datevol",
+				"application/models/modules/date_vol_iss.php"
+			],
+			[
+				"home",
+				"js/home.js"
+			],
+			[
+				"gener",
+				"js/generator.js"
+			],
+			[
+				"article",
+				"application/models/modules/articles.php"
+			],
+			[
+				"apolloadv",
+				"application/models/modules/apollo_advisor_custom_footer.php"
+			],
+			[
+				"genera",
+				"css/scss/_generator.scss"
+			],
+			[
+				"apollo",
+				"application/models/modules/apollo_copyright.php"
+			],
+			[
+				"express",
+				"application/models/modules/the_express_custom_footer.php"
+			],
+			[
+				"ping",
+				"application/models/modules/ping_custom_footer.php"
+			],
+			[
+				"rotatin",
+				"application/models/modules/rotating_banner.php"
+			],
+			[
+				"line",
+				"application/models/modules/line_divider.php"
+			],
+			[
+				"imagediv",
+				"application/models/modules/image_divider.php"
+			],
+			[
+				"newsl",
+				"application/libraries/newsletters.php"
+			],
+			[
+				"vol",
+				"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/modules/Date_vol_iss.php"
+			],
+			[
+				"expressfoo",
+				"application/models/modules/the_express_custom_footer.php"
+			],
+			[
+				"save_templ",
+				"application/models/save_template_model.php"
+			],
+			[
+				"homev",
+				"application/views/home_view.php"
+			],
+			[
+				"gen",
+				"js/generator.js"
+			],
+			[
+				"pingcust",
+				"application/models/modules/ping_custom_footer.php"
+			],
+			[
+				"expres",
+				"application/models/modules/the_express_custom_footer.php"
+			],
+			[
+				"model",
+				"application/models/save_template_model.php"
+			],
+			[
+				"variab",
+				"css/scss/_variables.scss"
+			],
+			[
+				"style",
+				"css/scss/style.scss"
+			],
+			[
+				"view",
+				"application/views/inputs_view.php"
+			],
+			[
+				"header",
+				"application/views/includes/header.php"
+			],
+			[
+				"template",
+				"application/views/includes/template.php"
+			],
+			[
+				"auto",
+				"application/config/autoload.php"
+			],
+			[
+				"htac",
+				"application/.htaccess"
+			],
+			[
+				"data",
+				"application/config/database.php"
+			],
+			[
+				"confi",
+				"application/config/config.php"
+			],
+			[
+				"databas",
+				"application/config/database.php"
+			],
+			[
+				"top",
+				"application/models/modules/Top_title_date.php"
+			],
+			[
+				"generat",
+				"js/generator.js"
+			],
+			[
+				"inputs",
+				"application/views/inputs_view.php"
+			],
+			[
+				"homejs",
+				"js/home.js"
+			],
+			[
+				"homevi",
+				"application/views/home_view.php"
+			],
+			[
+				"hom",
+				"application/controllers/Home.php"
+			],
+			[
+				"featured",
+				"application/models/modules/Featured_article.php"
+			],
+			[
+				"footer",
+				"application/views/includes/footer.php"
+			],
+			[
+				"head",
+				"application/views/includes/header.php"
+			],
+			[
+				"previ",
+				"application/views/preview.php"
+			],
+			[
+				"preview",
+				"created_and_preview/preview.php"
+			],
+			[
+				"input",
+				"application/views/inputs_view.php"
+			],
+			[
+				"caria",
+				"css/scss/_variables.scss"
+			],
+			[
+				"homeview",
+				"application/views/home_view.php"
+			],
+			[
+				"homescss",
+				"css/scss/_home-page.scss"
+			],
+			[
+				"uploadb",
+				"application/views/upload-banner-image.php"
+			],
+			[
+				"uploadba",
+				"application/views/uploaded-banner-image.php"
+			],
+			[
+				"uploaded",
+				"application/views/uploaded-banner-image.php"
+			],
+			[
+				"rotat",
+				"application/models/modules/Rotating_banner.php"
+			],
+			[
+				"newslet",
+				"application/libraries/Newsletters.php"
+			],
+			[
+				"featu",
+				"application/models/modules/Featured_article.php"
+			],
+			[
+				"upload",
+				"application/views/upload-ft-image.php"
+			],
+			[
+				"apolladv",
+				"application/models/modules/Apollo_advisor_custom_footer.php"
+			],
+			[
+				"artc",
+				"application/models/modules/Articles.php"
+			],
+			[
+				"banne",
+				"application/views/upload-banner-image.php"
+			],
+			[
+				"banner",
+				"application/models/modules/Rotating_banner.php"
+			],
+			[
+				"autol",
+				"application/config/autoload.php"
+			],
+			[
+				"needknow",
+				"application/models/modules/Need_to_know_list.php"
+			],
+			[
+				"feat",
+				"application/models/modules/Featured_article.php"
+			],
+			[
+				"custom",
+				"application/models/modules/Apollo_advisor_custom_footer.php"
+			],
+			[
+				"index",
+				"application/models/modules/index.html"
+			],
+			[
+				"divid",
+				"application/models/modules/Image_divider.php"
+			],
+			[
+				"featr",
+				"application/models/modules/Featured_article.php"
+			],
+			[
+				"rotati",
+				"application/models/modules/Rotating_banner.php"
+			],
+			[
+				"rot",
+				"application/models/modules/Rotating_banner.php"
+			],
+			[
+				"nee",
+				"application/models/modules/Need_to_know_list.php"
+			],
+			[
+				"scss",
+				"css/scss/_global.scss"
+			],
+			[
+				"voliss",
+				"application/models/modules/Date_vol_iss.php"
+			],
+			[
+				"publi",
+				"application/models/modules/Publish_date.php"
+			],
+			[
+				"the_",
+				"application/models/modules/The_express_custom_footer.php"
+			],
+			[
+				"arti",
+				"application/models/modules/Articles.php"
+			],
+			[
+				"publis",
+				"application/models/modules/Publish_date.php"
+			],
+			[
+				"feature",
+				"application/models/modules/Featured_article.php"
+			],
+			[
+				"art",
+				"application/models/modules/Articles.php"
+			],
+			[
+				"s3",
+				"application/config/s3.php"
+			],
+			[
+				"need_to",
+				"application/models/modules/Need_to_know_image_header.php"
+			],
+			[
+				"date_vol",
+				"application/models/modules/Date_vol_iss.php"
+			],
+			[
+				"issdate",
+				"application/models/modules/The_express_date_vol_iss.php"
+			],
+			[
+				"publish",
+				"application/models/modules/Publish_date.php"
+			],
+			[
+				"home-pag",
+				"css/scss/_home-page.scss"
+			],
+			[
+				"globa",
+				"css/scss/_global.scss"
+			],
+			[
+				"sty",
+				"css/scss/style.scss"
+			],
+			[
+				"exprecu",
+				"application/models/modules/The_express_custom_footer.php"
+			],
+			[
+				"date_vo",
+				"application/models/modules/Date_vol_iss.php"
+			],
+			[
+				"top_",
+				"application/models/modules/Top_title_date.php"
+			],
+			[
+				"expresdivi",
+				"application/models/modules/The_express_divider.php"
+			],
+			[
+				"the_exba",
+				"application/models/modules/The_express_banner.php"
+			],
+			[
+				"exprediv",
+				"application/models/modules/The_express_divider.php"
+			],
+			[
+				"glo",
+				"css/scss/_global.scss"
+			],
+			[
+				"featre",
+				"application/models/modules/Featured_article.php"
+			],
+			[
+				"global",
+				"css/scss/_global.scss"
+			],
+			[
+				"generscss",
+				"css/scss/_generator.scss"
+			],
+			[
+				"fou",
+				"css/foundation.min.css"
+			],
+			[
+				"generator",
+				"application/controllers/Generator.php"
+			],
+			[
+				"upload-b",
+				"application/views/upload-banner-image.php"
+			],
+			[
+				"glob",
+				"css/scss/_global.scss"
+			],
+			[
+				"js",
+				"js/generator.js"
+			],
+			[
+				"toi",
+				"application/models/modules/Top_title_date.php"
+			],
+			[
+				"hta",
+				"application/.htaccess"
+			],
+			[
+				"rout",
+				"application/config/routes.php"
+			],
+			[
+				"books",
+				"wp-content/themes/theoryserum/my-books-template.php"
+			],
+			[
+				"masthe",
+				"wp-content/themes/theoryserum/scss/_masthead.scss"
+			],
+			[
+				"masthea",
+				"wp-content/themes/theoryserum/scss/_masthead.scss"
+			],
+			[
+				"norma",
+				"wp-content/themes/theoryserum/normalize.css"
+			],
+			[
+				"can",
+				"wp-content/themes/theoryserum/js/hexagon-canvas.js"
+			],
+			[
+				"scri",
+				"wp-content/themes/theoryserum/js/script.js"
+			],
+			[
+				"boxbl",
+				"wp-content/themes/theoryserum/js/BoxBlurFilter.js"
+			],
+			[
+				"ease",
+				"wp-content/themes/theoryserum/js/easeljs-0.6.1.min.js"
+			],
+			[
+				"easel",
+				"wp-content/themes/theoryserum/js/easeljs-0.6.1.min.js"
+			],
+			[
+				"conf",
+				"wp-config-sample.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 236.0,
+	"status_bar_visible": true
+}

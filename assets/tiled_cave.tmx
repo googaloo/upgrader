@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="39">
+ <tileset firstgid="1" name="Cave" tilewidth="32" tileheight="39">
+  <image source="cave_tiles.png" width="160" height="195"/>
+ </tileset>
+ <tileset firstgid="26" name="Cave" tilewidth="32" tileheight="39">
+  <image source="cave_tiles.png" width="160" height="195"/>
+ </tileset>
+ <tileset firstgid="51" name="Cave" tilewidth="32" tileheight="39">
+  <image source="cave_tiles.png" width="160" height="195"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1kkKgDAURME43//G6gU0oMEO1qKWgR8eGbZSygYAQHNDwAwAT42HqcLXc/7FEjAD1z1q3/+7szUH7K83T87H3do1YH+90SNLyx4nf4Q+Wv5Bzb/1zXdXjzbc81n0yKJHFj2y6AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbdgfeELU=
+  </data>
+ </layer>
+</map>

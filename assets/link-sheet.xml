@@ -1,0 +1,9 @@
+<TextureAtlas imagePath="link-sheet.png">
+	<SubTexture name="cave1.png" x="34" y="0" width="32" height="39"/>
+	<SubTexture name="cave2.png" x="34" y="82" width="32" height="39"/>
+	<SubTexture name="cave3.png" x="34" y="41" width="32" height="39"/>
+	<SubTexture name="cave4.png" x="68" y="0" width="32" height="38"/>
+	<SubTexture name="cave5.png" x="0" y="82" width="32" height="39"/>
+	<SubTexture name="cave6.png" x="0" y="41" width="32" height="39"/>
+	<SubTexture name="cave7.png" x="0" y="0" width="32" height="39"/>
+</TextureAtlas>
