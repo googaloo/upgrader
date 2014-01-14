@@ -9,19 +9,24 @@ var map;
 var tileset;
 var layer;
 var player;
+var turret1Base;
+var turretJoint;
+var turretCanon;
 var playerFacing = 'right';
 var jumperFacing = 'right';
+var turretDirection = 'right';
 
 function preload() {
 
 	game.load.spritesheet('player', 'assets/player.png', 182, 86);
-	//game.load.image('player', 'assets/player.png');
 	game.load.spritesheet('bottomBooster', 'assets/bottom-booster.png', 61, 44);
 	game.load.spritesheet('sideBooster', 'assets/side-booster.png', 13, 20);
-	game.load.spritesheet('jumperBot', 'assets/jumper-bot.png', 48, 98);
-	game.load.image('ground', 'assets/platform.png');
+	game.load.spritesheet('jumperBot', 'assets/jumper-bot.png', 48, 120);
 	game.load.tilemap('level1', 'assets/cave_tilemap.json', null, Phaser.Tilemap.TILED_JSON);
 	game.load.tileset('tiles', 'assets/cave_tiles.png', 32, 39);
+	game.load.image('turretCanon', 'assets/turret-canon.png');
+	game.load.image('turretJoint', 'assets/turret-joint.png');
+	game.load.image('turret1Base', 'assets/turret1-base.png');
 
 }
 
@@ -49,14 +54,11 @@ function create() {
 	// CURSORS
 	cursors = game.input.keyboard.createCursorKeys();
 
-	// PLATFORMS
-	platforms = game.add.group();
-
 	// JUMPERBOT
-	jumperBot = game.add.sprite((game.world.width - 275), (game.world.height - 250), 'jumperBot');
+	jumperBot = game.add.sprite(Math.floor(Math.random() * game.width +1), Math.floor(Math.random() * game.height +1), 'jumperBot');
 	jumperBot.body.collideWorldBounds = true;
-	jumperBot.animations.add('jump-left', [2,1,0], 12, false);
-	jumperBot.animations.add('jump-right', [3,4,5], 12, false);
+	jumperBot.animations.add('jump-left', [3,1,2,0], 9, false);
+	jumperBot.animations.add('jump-right', [4,6,5,7], 9, false);
 	jumperBot.animations.add('idle', [1], 10, false);
 	jumperBot.body.gravity.y = 10;
 
@@ -74,12 +76,29 @@ function create() {
 	sideBooster.animations.add('burn', [1,2,3,4,5], 8, true);
 	sideBooster.animations.add('idle', [0]);
 
+	// TURRET 1
+	turret1Base = game.add.sprite(Math.floor(Math.random() * game.width +1), Math.floor(Math.random() * game.height +1), 'turret1Base');
+	turretCanon = game.add.sprite(0, 0, 'turretCanon');
+	turretCanon.anchor.x = 0.5;
+	turretCanon.anchor.y = 1;
+	turretJoint = game.add.sprite(0, 0, 'turretJoint');
+	turretJoint.x = (turret1Base.x + (turret1Base.width / 2)) - (turretJoint.width / 2);
+	turretJoint.y = turret1Base.y + 10;
+	turretCanon.x = turretJoint.x + (turretJoint.width / 2);
+	turretCanon.y = turretJoint.y + (turretJoint.height / 2);
+	turret1Base.body.gravity.y = 10;
 }
 
 function update() {
 
 	game.physics.collide(jumperBot, layer);
 	game.physics.collide(player, layer);
+	game.physics.collide(turret1Base, layer);
+
+	turretJoint.x = (turret1Base.x + (turret1Base.width / 2)) - (turretJoint.width / 2);
+	turretJoint.y = turret1Base.y + 10;
+	turretCanon.x = turretJoint.x + (turretJoint.width / 2);
+	turretCanon.y = turretJoint.y + (turretJoint.height / 2);
 
 	// PLAYER UP
 	if ( cursors.up.isDown ) {
@@ -179,9 +198,6 @@ function update() {
 	// JUMPERBOT JUMP
 	if ( jumperBot.body.touching.down ) {
 
-		console.log(jumperBot.body.wasTouching);
-
-
 		if ( jumperFacing == 'left' ) {
 
 			jumperBot.animations.play('jump-left');
@@ -197,5 +213,30 @@ function update() {
 		}
 	}
 
+	if ( turretCanon.angle >= 65 ) {
+		turretDirection = 'left';
+	}
 
+	if ( turretCanon.angle <= -65 ) {
+		turretDirection = 'right';
+	}
+
+	if ( turretDirection == 'right' ) {
+		turretCanon.angle = turretCanon.angle + 2;
+	}
+
+	if ( turretDirection == 'left' ) {
+		turretCanon.angle = turretCanon.angle - 2;
+	}
+
+}
+
+function randomMapPosX() {
+	var random = Math.floor(Math.random() * game.width +1);
+	return random;
+}
+
+function randomMapPosY() {
+	var random = Math.floor(Math.random() * game.height +1);
+	return random;
 }

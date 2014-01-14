@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"turret",
+				"turretBase"
+			],
+			[
+				"turret-",
+				"turret-canon"
+			],
+			[
 				"JSON",
 				"json_decode"
 			],
@@ -143,8 +151,17 @@
 			"file": "js/game.js",
 			"settings":
 			{
-				"buffer_size": 4980,
+				"buffer_size": 5590,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.txt",
+			"settings":
+			{
+				"buffer_size": 21,
+				"line_ending": "Unix",
+				"name": "A Test Phaser 2D Game"
 			}
 		},
 		{
@@ -469,6 +486,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"randomMapPosY",
 			"8",
 			"225",
 			"5",
@@ -595,8 +613,7 @@
 			"boxblurfilte",
 			"boxblurfilter",
 			"displayobject",
-			"$bucket",
-			"$bucket\n\n\n\n\n\n\n\n\n$bucket"
+			"$bucket"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -756,15 +773,15 @@
 					"file": "js/game.js",
 					"settings":
 					{
-						"buffer_size": 4980,
+						"buffer_size": 5590,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3641,
-								3641
+								2923,
+								2723
 							]
 						],
 						"settings":
@@ -877,13 +894,144 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2031.0,
+						"translation.y": 339.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"file": "README.txt",
+					"settings":
+					{
+						"buffer_size": 21,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17,
+								17
+							]
+						],
+						"settings":
+						{
+							"auto_name": "A Test Phaser 2D Game",
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "js/player.js",
 					"settings":
 					{
