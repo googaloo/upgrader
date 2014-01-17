@@ -23,12 +23,36 @@ Player = function(x,y) {
 	this._sprite.facing = Phaser.RIGHT;
 	this._sprite.body.maxVelocity = 175;
 
+	// BLASTER EMITTER
+	this._blasterEmitter = game.add.emitter(this._sprite.x, this._sprite.y);
+	this._blasterEmitter.makeParticles('playerBlasterEmitter');
+	this._blasterEmitter.gravity = 10;
+	this._blasterBurst = blasterBurst;
+
+	function blasterBurst() {
+
+		if ( player._facing == 'right' ) {
+			player._blasterEmitter.x = player._sprite.x + (player._sprite.body.width);
+			player._blasterEmitter.y = player._sprite.y + 60;	
+			player._blasterEmitter.maxParticleSpeed.x = 2000;
+			player._blasterEmitter.start(true, 300, null, 10);
+		} else if ( player._facing == 'left' ) {
+			player._blasterEmitter.x = player._sprite.x;
+			player._blasterEmitter.y = player._sprite.y + 60;
+			player._blasterEmitter.maxParticleSpeed.x = -2000;
+			player._blasterEmitter.start(true, 300, null, 10);
+		}
+
+	}
+
+
 	this._facing = 'right';
 
 	game.camera.follow(this._sprite);
 
 	// FIRING
 	fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+	fireButton.onDown.add(blasterBurst, this);
 
 	playerBlast = game.add.sprite(this.x, this.y, 'playerBlast1');
 	playerBlast.anchor.x = 0.5;
@@ -130,6 +154,8 @@ Player.prototype.update = function() {
 	if ( fireButton.isDown ) {
 
 		if ( game.time.now > blasterTime ) {
+
+			this._blasterBurst();
 
 			playerBlast.scale.x = 0.1;
 			playerBlast.scale.y = 0.1;

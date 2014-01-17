@@ -20,6 +20,7 @@ function preload() {
 	game.load.spritesheet('sideBooster', 'assets/side-booster.png', 13, 20);
 	game.load.image('playerBlast1', 'assets/player-blast-spark-normal.png');
 	game.load.image('laser', 'assets/laser.png');
+	game.load.image('playerBlasterEmitter', 'assets/player-blaster-emitter.png');
 
 	game.load.spritesheet('jumperBot', 'assets/jumper-bot.png', 48, 120);
 
@@ -56,3 +57,4 @@ function update() {
 	jumperBot.update();
 
 }
+
