@@ -1,15 +1,13 @@
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
-var bottomBooster;
 var platforms;
 var map;
-var jumperBot;
 var ground;
 var map;
 var tileset;
 var layer;
 var player;
+var jumperBot;
 var turret;
-var jumperFacing = 'right';
 
 
 function preload() {
@@ -44,12 +42,7 @@ function create() {
 	player = new Player((game.world.width / 2) - 250, (game.world.height / 2));
 	
 	// JUMPERBOT
-	jumperBot = game.add.sprite(Math.floor(Math.random() * game.width +1), Math.floor(Math.random() * game.height +1), 'jumperBot');
-	jumperBot.body.collideWorldBounds = true;
-	jumperBot.animations.add('jump-left', [3,1,2,0], 12, false);
-	jumperBot.animations.add('jump-right', [4,6,5,7], 12, false);
-	jumperBot.animations.add('idle', [1], 10, false);
-	jumperBot.body.gravity.y = 10;
+	jumperBot = new JumperBot(Math.floor(Math.random() * game.width +1), Math.floor(Math.random() * game.height +1));
 
 	// TURRET 1
 	turret = new Turret(Math.floor(Math.random() * game.width +1), Math.floor(Math.random() * game.height +1));
@@ -60,34 +53,6 @@ function update() {
 
 	player.update();
 	turret.update();
-
-	game.physics.collide(jumperBot, layer);
-
-	if ( jumperBot.body.touching.left ) {
-		jumperFacing = 'right';
-	}
-
-	if ( jumperBot.body.touching.right ) {
-		jumperFacing = 'left';
-		console.log('touched right');
-	}
-
-	// JUMPERBOT JUMP
-	if ( jumperBot.body.touching.down ) {
-
-		if ( jumperFacing == 'left' ) {
-
-			jumperBot.animations.play('jump-left');
-			jumperBot.body.velocity.y = -375;
-			jumperBot.body.velocity.x = -150;
-
-		} else if ( jumperFacing == 'right' ) {
-
-			jumperBot.animations.play('jump-right');
-			jumperBot.body.velocity.y = -375;
-			jumperBot.body.velocity.x = 150;
-
-		}
-	}
+	jumperBot.update();
 
 }

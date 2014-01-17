@@ -3,7 +3,6 @@ playerBlast,
 fireButton,
 blasterTime = 0,
 laser,
-playerFacing = 'right',
 playerCursors,
 bottomBooster,
 sideBooster;
@@ -23,6 +22,8 @@ Player = function(x,y) {
 	this._sprite.scale.y = 0.75;
 	this._sprite.facing = Phaser.RIGHT;
 	this._sprite.body.maxVelocity = 175;
+
+	this._facing = 'right';
 
 	game.camera.follow(this._sprite);
 
@@ -92,7 +93,7 @@ Player.prototype.update = function() {
 	// PLAYER RIGHT
 	if ( playerCursors.right.isDown ) {
 
-		playerFacing = 'right';
+		this._facing = 'right';
 		this._sprite.body.velocity.x = 350;
 		sideBooster.animations.play('burn');
 
@@ -111,7 +112,7 @@ Player.prototype.update = function() {
 	// PLAYER LEFT
 	if ( playerCursors.left.isDown ) {
 
-		playerFacing = 'left';
+		this._facing = 'left';
 		this._sprite.body.velocity.x = -350;
 		sideBooster.animations.play('burn');
 
@@ -134,10 +135,10 @@ Player.prototype.update = function() {
 			playerBlast.scale.y = 0.1;
 			playerBlast.visible = true;
 
-			if ( playerFacing == 'right' ) {
+			if ( this._facing == 'right' ) {
 				laser.x = this._sprite.x + (this._sprite.body.width - 30);
 				laser.y = this._sprite.y + 60;	
-			} else if ( playerFacing == 'left' ) {
+			} else if ( this._facing == 'left' ) {
 				laser.x = this._sprite.x;
 				laser.y = this._sprite.y + 60;	
 			}
@@ -151,12 +152,12 @@ Player.prototype.update = function() {
 
 	if ( playerBlast.visible ) {
 
-		if ( playerFacing == 'right' ) {
+		if ( this._facing == 'right' ) {
 
 			playerBlast.x = this._sprite.x + 135;
 			playerBlast.y = this._sprite.y + 60;
 
-		} else if ( playerFacing == 'left' ) {
+		} else if ( this._facing == 'left' ) {
 
 			playerBlast.x = this._sprite.x;
 			playerBlast.y = this._sprite.y + 60;
@@ -174,9 +175,9 @@ Player.prototype.update = function() {
 
 	if ( laser.visible ) {
 
-		if ( playerFacing == 'right' ) {
+		if ( this._facing == 'right' ) {
 			laser.x = laser.x + 25;
-		} else if ( playerFacing == 'left' ) {
+		} else if ( this._facing == 'left' ) {
 			laser.x = laser.x - 25;
 		}
 
@@ -186,7 +187,7 @@ Player.prototype.update = function() {
 
 	}
 
-	if ( playerFacing == 'right' ) {
+	if ( this._facing == 'right' ) {
 
 		this._sprite.animations.play('right');
 		bottomBooster.x = this._sprite.x + 12;
@@ -194,7 +195,7 @@ Player.prototype.update = function() {
 		sideBooster.x = this._sprite.x - 9;
 		sideBooster.y = this._sprite.y + 35;
 
-	} else if ( playerFacing == 'left' ) {
+	} else if ( this._facing == 'left' ) {
 
 		this._sprite.animations.play('left');
 		bottomBooster.x = this._sprite.x + 80;
