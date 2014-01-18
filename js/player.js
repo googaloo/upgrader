@@ -2,11 +2,13 @@ var Player,
 playerBlast,
 fireButton,
 blasterTime = 0,
+lasers,
 laser,
 playerCursors,
 bottomBooster,
 sideBooster,
 shieldButton,
+laserExplode,
 shieldOpen = false;
 
 
@@ -25,6 +27,8 @@ Player = function(x,y) {
 	this._sprite.facing = Phaser.RIGHT;
 	this._sprite.body.maxVelocity = 175;
 	this._canMove = true; // For shield stop
+	this._facing = 'right';
+	game.camera.follow(this._sprite);
 
 	// BLASTER EMITTER
 	this._blasterEmitter = game.add.emitter(this._sprite.x, this._sprite.y);
@@ -34,16 +38,21 @@ Player = function(x,y) {
 
 	function blasterBurst() {
 
-		if ( player._facing == 'right' ) {
-			player._blasterEmitter.x = player._sprite.x + (player._sprite.body.width);
-			player._blasterEmitter.y = player._sprite.y + 60;	
-			player._blasterEmitter.maxParticleSpeed.x = 2000;
-			player._blasterEmitter.start(true, 300, null, 10);
-		} else if ( player._facing == 'left' ) {
-			player._blasterEmitter.x = player._sprite.x;
-			player._blasterEmitter.y = player._sprite.y + 60;
-			player._blasterEmitter.maxParticleSpeed.x = -2000;
-			player._blasterEmitter.start(true, 300, null, 10);
+		if ( !shieldOpen ) {
+
+			if ( player._facing == 'right' ) {
+				player._blasterEmitter.x = player._sprite.x + (player._sprite.body.width);
+				player._blasterEmitter.y = player._sprite.y + 60;	
+				player._blasterEmitter.maxParticleSpeed.x = 300;
+				player._blasterEmitter.start(true, 500, null, 1);
+
+			} else if ( player._facing == 'left' ) {
+				player._blasterEmitter.x = player._sprite.x;
+				player._blasterEmitter.y = player._sprite.y + 60;
+				player._blasterEmitter.maxParticleSpeed.x = -300;
+				player._blasterEmitter.start(true, 500, null, 1);
+			}
+
 		}
 
 	}
@@ -58,12 +67,6 @@ Player = function(x,y) {
 	this._shield.anchor.y = 0.5;
 	this._shield.visible = false;
 
-
-
-	this._facing = 'right';
-
-	game.camera.follow(this._sprite);
-
 	// FIRING
 	fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 	fireButton.onDown.add(blasterBurst, this);
@@ -73,9 +76,16 @@ Player = function(x,y) {
 	playerBlast.anchor.y = 0.5;
 	playerBlast.visible = false;
 
-	laser = game.add.sprite(0, 0, 'laser');
-	laser.anchor.y = 0.5;
-	laser.visible = true;
+	// LASERS
+	lasers = game.add.group();
+	lasers.createMultiple(30, 'laser');
+	lasers.setAll('anchor.y', 0.5);
+	lasers.setAll('outOfBoundsKill', true);
+
+	// LASER EXPLOSION ON COLLIDE
+	laserExplode = game.add.emitter(lasers.x, lasers.y);
+	laserExplode.makeParticles('playerBlasterEmitter');
+	laserExplode.gravity = 10;
 
 	// BOTTOMBOOSTER
 	bottomBooster = game.add.sprite(0, 0, 'bottomBooster');
@@ -96,6 +106,8 @@ Player = function(x,y) {
 Player.prototype.update = function() {
 
 	game.physics.collide(this._sprite, layer);
+	game.physics.collide(this._blasteEmitter, layer);
+	game.physics.collide(lasers, layer, laserLayerCollideHandler, null, this);
 
 
 ///////////////////////////////////////////////////
@@ -189,23 +201,27 @@ Player.prototype.update = function() {
 
 	if ( fireButton.isDown ) {
 
-		if ( game.time.now > blasterTime ) {
+		if ( game.time.now > blasterTime && !shieldOpen ) {
 
 			this._blasterBurst();
+
+			laser = lasers.getFirstExists(false);
+
+			if ( laser ) {
+
+				if ( this._facing == 'right' ) {
+					laser.reset(this._sprite.x + (this._sprite.body.width - 30), this._sprite.y + 60);
+					laser.body.velocity.x = 2000;
+				} else if ( this._facing == 'left' ) {
+					laser.reset(this._sprite.x, this._sprite.y + 60);
+					laser.body.velocity.x = -2000;
+				}
+
+			}
 
 			playerBlast.scale.x = 0.1;
 			playerBlast.scale.y = 0.1;
 			playerBlast.visible = true;
-
-			if ( this._facing == 'right' ) {
-				laser.x = this._sprite.x + (this._sprite.body.width - 30);
-				laser.y = this._sprite.y + 60;	
-			} else if ( this._facing == 'left' ) {
-				laser.x = this._sprite.x;
-				laser.y = this._sprite.y + 60;	
-			}
-			
-			laser.visible = true;
 
 			blasterTime = game.time.now + 200;
 
@@ -232,21 +248,6 @@ Player.prototype.update = function() {
 		if ( playerBlast.scale.x >= 1 ) {
 			playerBlast.visible = false;
 		}
-	}
-
-
-	if ( laser.visible ) {
-
-		if ( this._facing == 'right' ) {
-			laser.x = laser.x + 25;
-		} else if ( this._facing == 'left' ) {
-			laser.x = laser.x - 25;
-		}
-
-		if ( laser.x > game.world.width || laser.x < 0 ) {
-			laser.visible = false;
-		}
-
 	}
 
 ///////////////////////////////////////////////////
@@ -328,3 +329,27 @@ Player.prototype.update = function() {
 	}
 
 } // end update
+
+function laserLayerCollideHandler(laser, layer) {
+
+		
+
+	if ( laser.body.touching.right ) {
+
+		laserExplode.x = laser.x + (laser.body.width );
+		laserExplode.y = laser.y;
+		laserExplode.maxParticleSpeed.x = -550;
+		laserExplode.start(true, 200, null, 5);
+
+	} else if ( laser.body.touching.left ) {
+		// laserExplode.x = laser.x;
+		// laserExplode.y = laser.y;
+		laserExplode.x = laser.x;
+		laserExplode.y = laser.y;
+		laserExplode.maxParticleSpeed.x = 550;
+		laserExplode.start(true, 200, null, 5);
+	}
+	
+	laser.kill();
+
+}
