@@ -21,6 +21,7 @@ function preload() {
 	game.load.image('playerBlast1', 'assets/player-blast-spark-normal.png');
 	game.load.image('laser', 'assets/laser.png');
 	game.load.image('playerBlasterEmitter', 'assets/player-blaster-emitter.png');
+	game.load.image('playerShield', 'assets/player-shield.png');
 
 	game.load.spritesheet('jumperBot', 'assets/jumper-bot.png', 48, 120);
 

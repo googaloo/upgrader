@@ -23,7 +23,6 @@ JumperBot.prototype.update = function() {
 
 	if ( this._sprite.body.touching.right ) {
 		this._facing = 'left';
-		console.log('touched right');
 	}
 
 	// JUMP

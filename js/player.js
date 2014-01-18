@@ -5,7 +5,9 @@ blasterTime = 0,
 laser,
 playerCursors,
 bottomBooster,
-sideBooster;
+sideBooster,
+shieldButton,
+shieldOpen = false;
 
 
 Player = function(x,y) {
@@ -22,6 +24,7 @@ Player = function(x,y) {
 	this._sprite.scale.y = 0.75;
 	this._sprite.facing = Phaser.RIGHT;
 	this._sprite.body.maxVelocity = 175;
+	this._canMove = true; // For shield stop
 
 	// BLASTER EMITTER
 	this._blasterEmitter = game.add.emitter(this._sprite.x, this._sprite.y);
@@ -44,6 +47,17 @@ Player = function(x,y) {
 		}
 
 	}
+
+	// SHIELD
+	shieldButton = game.input.keyboard.addKey(Phaser.Keyboard.SHIFT);
+
+	this._shield = game.add.sprite(this._sprite.x, this._sprite.y, 'playerShield');
+	this._shield.scale.x = 0.1;
+	this._shield.scale.y = 0.1;
+	this._shield.anchor.x = 0.5;
+	this._shield.anchor.y = 0.5;
+	this._shield.visible = false;
+
 
 
 	this._facing = 'right';
@@ -83,74 +97,96 @@ Player.prototype.update = function() {
 
 	game.physics.collide(this._sprite, layer);
 
-	if ( playerCursors.up.isDown ) {
 
-		this._sprite.body.velocity.y = -350;
-		bottomBooster.animations.play('burn');
+///////////////////////////////////////////////////
+	////////////// PLAYER MOVE //////////////
+///////////////////////////////////////////////////
 
-	} else if ( this._sprite.body.velocity.y <= 0 ) {
+	if ( player._canMove ) {
 
-		this._sprite.body.velocity.y = this._sprite.body.velocity.y + 15;
-		bottomBooster.animations.play('idle');
-		if ( this._sprite.body.velocity.y >= 0 ) {
-			this._sprite.body.velocity.y = 0;
+		if ( playerCursors.up.isDown ) {
+
+			this._sprite.body.velocity.y = -350;
+			bottomBooster.animations.play('burn');
+
+		} else if ( this._sprite.body.velocity.y <= 0 ) {
+
+			this._sprite.body.velocity.y = this._sprite.body.velocity.y + 15;
+			bottomBooster.animations.play('idle');
+			if ( this._sprite.body.velocity.y >= 0 ) {
+				this._sprite.body.velocity.y = 0;
+			}
+
 		}
 
-	}
+		// PLAYER DOWN
+		if ( playerCursors.down.isDown ) {
 
-	// PLAYER DOWN
-	if ( playerCursors.down.isDown ) {
-
-		this._sprite.body.velocity.y = 350;
-
-	// Slow down
-	} else if ( this._sprite.body.velocity.y >= 0 ) {
-
-		this._sprite.body.velocity.y = this._sprite.body.velocity.y -15;
-
-		if ( this._sprite.body.velocity.y <= 0 ) {
-			this._sprite.body.velocity.y = 0;
-		}
-
-	}
-
-	// PLAYER RIGHT
-	if ( playerCursors.right.isDown ) {
-
-		this._facing = 'right';
-		this._sprite.body.velocity.x = 350;
-		sideBooster.animations.play('burn');
+			this._sprite.body.velocity.y = 350;
 
 		// Slow down
-	} else if ( this._sprite.body.velocity.x >= 0 ) {
+		} else if ( this._sprite.body.velocity.y >= 0 ) {
 
-		this._sprite.body.velocity.x = this._sprite.body.velocity.x -15;
-		sideBooster.animations.play('idle');
+			this._sprite.body.velocity.y = this._sprite.body.velocity.y -15;
 
-		if ( this._sprite.body.velocity.x <= 0 ) {
-			this._sprite.body.velocity.x = 0;
+			if ( this._sprite.body.velocity.y <= 0 ) {
+				this._sprite.body.velocity.y = 0;
+			}
+
 		}
+
+		// PLAYER RIGHT
+		if ( playerCursors.right.isDown ) {
+
+			this._facing = 'right';
+			this._sprite.body.velocity.x = 350;
+			sideBooster.animations.play('burn');
+
+			// Slow down
+		} else if ( this._sprite.body.velocity.x >= 0 ) {
+
+			this._sprite.body.velocity.x = this._sprite.body.velocity.x -15;
+			sideBooster.animations.play('idle');
+
+			if ( this._sprite.body.velocity.x <= 0 ) {
+				this._sprite.body.velocity.x = 0;
+			}
+
+		}
+
+		// PLAYER LEFT
+		if ( playerCursors.left.isDown ) {
+
+			this._facing = 'left';
+			this._sprite.body.velocity.x = -350;
+			sideBooster.animations.play('burn');
+
+		} else if ( this._sprite.body.velocity.x <= 0 ) {
+
+			this._sprite.body.velocity.x = this._sprite.body.velocity.x +15;
+			sideBooster.animations.play('idle');
+
+			if ( this._sprite.body.velocity.x >= 0 ) {
+				this._sprite.body.velocity.x = 0;
+			}
+		}
+
+	} else {
+
+		this._sprite.body.velocity.x = 0;
+		this._sprite.body.velocity.y = 0;
+		sideBooster.animations.play('idle');
+		bottomBooster.animations.play('idle');
+
 
 	}
 
-	// PLAYER LEFT
-	if ( playerCursors.left.isDown ) {
 
-		this._facing = 'left';
-		this._sprite.body.velocity.x = -350;
-		sideBooster.animations.play('burn');
+///////////////////////////////////////////////////
+	////////////// PLAYER BLAST //////////////
+///////////////////////////////////////////////////
 
-	} else if ( this._sprite.body.velocity.x <= 0 ) {
 
-		this._sprite.body.velocity.x = this._sprite.body.velocity.x +15;
-		sideBooster.animations.play('idle');
-
-		if ( this._sprite.body.velocity.x >= 0 ) {
-			this._sprite.body.velocity.x = 0;
-		}
-	}
-
-	// PLAYER BLAST
 	if ( fireButton.isDown ) {
 
 		if ( game.time.now > blasterTime ) {
@@ -212,6 +248,66 @@ Player.prototype.update = function() {
 		}
 
 	}
+
+///////////////////////////////////////////////////
+	////////////// PLAYER SHIELD //////////////
+///////////////////////////////////////////////////
+
+	if ( shieldButton.isDown ) {
+
+		player._canMove = false;
+
+		if ( !shieldOpen ) {
+
+			console.log('uhh');
+			//player._shield.x = player._sprite.body.width - (player._sprite.body.width / 2);
+			player._shield.x = player._sprite.x + (player._sprite.width / 2);
+			player._shield.y = player._sprite.y + (player._sprite.height / 2);
+			player._shield.visible = true;
+
+			if ( player._shield.scale.x < 0.75 ) {
+
+				player._shield.scale.x = player._shield.scale.x + 0.1;
+				player._shield.scale.y = player._shield.scale.y + 0.1;
+
+			} else {
+
+				shieldOpen = true;	
+
+			}
+
+		}
+
+	} if ( shieldButton.isUp ) {
+
+		if ( shieldOpen ) {
+
+			if ( player._shield.scale.x > 0.1 ) {
+
+				player._shield.scale.x = player._shield.scale.x - 0.1;
+				player._shield.scale.y = player._shield.scale.y - 0.1;
+
+			} else {
+
+				player._shield.visible = false;
+				shieldOpen = false;	
+				player._canMove = true;
+
+			}
+
+		} else {
+
+			player._shield.visible = false;
+			player._shield.scale.x = 0.1;
+			player._shield.scale.y = 0.1;
+
+		}
+
+	}
+
+///////////////////////////////////////////////////
+	////////////// PLAYER BOOSTERS ///////////
+///////////////////////////////////////////////////
 
 	if ( this._facing == 'right' ) {
 
