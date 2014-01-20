@@ -8,6 +8,7 @@ JumperBot = function(x,y) {
 	this._sprite.animations.add('jump-right', [4,6,5,7], 12, false);
 	this._sprite.animations.add('idle', [1], 10, false);
 	this._sprite.body.gravity.y = 10;
+	this._sprite.immovable = true;
 
 	this._facing = 'right';
 

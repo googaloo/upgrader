@@ -2,13 +2,10 @@ var Player,
 playerBlast,
 fireButton,
 blasterTime = 0,
-lasers,
-laser,
 playerCursors,
 bottomBooster,
 sideBooster,
 shieldButton,
-laserExplode,
 shieldOpen = false;
 
 
@@ -34,6 +31,8 @@ Player = function(x,y) {
 	this._blasterEmitter = game.add.emitter(this._sprite.x, this._sprite.y);
 	this._blasterEmitter.makeParticles('playerBlasterEmitter');
 	this._blasterEmitter.gravity = 10;
+	this._blasterEmitter.bounce.x = 0.3;
+	this._blasterEmitter.bounce.y = 0.3;
 	this._blasterBurst = blasterBurst;
 
 	function blasterBurst() {
@@ -44,20 +43,23 @@ Player = function(x,y) {
 				player._blasterEmitter.x = player._sprite.x + (player._sprite.body.width);
 				player._blasterEmitter.y = player._sprite.y + 60;	
 				player._blasterEmitter.maxParticleSpeed.x = 300;
-				player._blasterEmitter.start(true, 500, null, 1);
+				player._blasterEmitter.start(true, 1000, null, 1);
 
 			} else if ( player._facing == 'left' ) {
 				player._blasterEmitter.x = player._sprite.x;
 				player._blasterEmitter.y = player._sprite.y + 60;
 				player._blasterEmitter.maxParticleSpeed.x = -300;
-				player._blasterEmitter.start(true, 500, null, 1);
+				player._blasterEmitter.start(true, 1000, null, 1);
 			}
 
 		}
 
 	}
 
-	// SHIELD
+	// LASER (x, y, type of laser (ie standard, rapid, continuious)) /////////////////////////
+	this._laser = new Laser(0, 0, 'standard');
+
+	// SHIELD ////////////////////////////////////////////////////////////////////////////////
 	shieldButton = game.input.keyboard.addKey(Phaser.Keyboard.SHIFT);
 
 	this._shield = game.add.sprite(this._sprite.x, this._sprite.y, 'playerShield');
@@ -67,7 +69,7 @@ Player = function(x,y) {
 	this._shield.anchor.y = 0.5;
 	this._shield.visible = false;
 
-	// FIRING
+	// FIRING ////////////////////////////////////////////////////////////////////////////////
 	fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 	fireButton.onDown.add(blasterBurst, this);
 
@@ -76,25 +78,14 @@ Player = function(x,y) {
 	playerBlast.anchor.y = 0.5;
 	playerBlast.visible = false;
 
-	// LASERS
-	lasers = game.add.group();
-	lasers.createMultiple(30, 'laser');
-	lasers.setAll('anchor.y', 0.5);
-	lasers.setAll('outOfBoundsKill', true);
-
-	// LASER EXPLOSION ON COLLIDE
-	laserExplode = game.add.emitter(lasers.x, lasers.y);
-	laserExplode.makeParticles('playerBlasterEmitter');
-	laserExplode.gravity = 10;
-
-	// BOTTOMBOOSTER
+	// BOTTOMBOOSTER ////////////////////////////////////////////////////////////////////////////////
 	bottomBooster = game.add.sprite(0, 0, 'bottomBooster');
 	bottomBooster.scale.x = 0.75;
 	bottomBooster.scale.y = 0.75;
 	bottomBooster.animations.add('burn', [1,2,3,4,5,6], 10, true);
 	bottomBooster.animations.add('idle', [0]);
 
-	// SIDEBOOSTER
+	// SIDEBOOSTER ////////////////////////////////////////////////////////////////////////////////
 	sideBooster = game.add.sprite(0, 0, 'sideBooster');
 	sideBooster.scale.x = 0.75;
 	sideBooster.scale.y = 0.75;
@@ -106,8 +97,9 @@ Player = function(x,y) {
 Player.prototype.update = function() {
 
 	game.physics.collide(this._sprite, layer);
-	game.physics.collide(this._blasteEmitter, layer);
-	game.physics.collide(lasers, layer, laserLayerCollideHandler, null, this);
+	game.physics.collide(this._blasterEmitter, layer);
+	this._laser.update();
+	
 
 
 ///////////////////////////////////////////////////
@@ -204,20 +196,7 @@ Player.prototype.update = function() {
 		if ( game.time.now > blasterTime && !shieldOpen ) {
 
 			this._blasterBurst();
-
-			laser = lasers.getFirstExists(false);
-
-			if ( laser ) {
-
-				if ( this._facing == 'right' ) {
-					laser.reset(this._sprite.x + (this._sprite.body.width - 30), this._sprite.y + 60);
-					laser.body.velocity.x = 2000;
-				} else if ( this._facing == 'left' ) {
-					laser.reset(this._sprite.x, this._sprite.y + 60);
-					laser.body.velocity.x = -2000;
-				}
-
-			}
+			this._laser._fire();
 
 			playerBlast.scale.x = 0.1;
 			playerBlast.scale.y = 0.1;
@@ -329,27 +308,3 @@ Player.prototype.update = function() {
 	}
 
 } // end update
-
-function laserLayerCollideHandler(laser, layer) {
-
-		
-
-	if ( laser.body.touching.right ) {
-
-		laserExplode.x = laser.x + (laser.body.width );
-		laserExplode.y = laser.y;
-		laserExplode.maxParticleSpeed.x = -550;
-		laserExplode.start(true, 200, null, 5);
-
-	} else if ( laser.body.touching.left ) {
-		// laserExplode.x = laser.x;
-		// laserExplode.y = laser.y;
-		laserExplode.x = laser.x;
-		laserExplode.y = laser.y;
-		laserExplode.maxParticleSpeed.x = 550;
-		laserExplode.start(true, 200, null, 5);
-	}
-	
-	laser.kill();
-
-}

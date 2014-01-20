@@ -58,4 +58,3 @@ function update() {
 	jumperBot.update();
 
 }
-
