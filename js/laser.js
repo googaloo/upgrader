@@ -5,7 +5,7 @@ Laser = function(x,y,type) {
 
 	// LASERS
 	this._laserGroup = game.add.group();
-	this._laserGroup.createMultiple(30, 'laser');
+	this._laserGroup.createMultiple(10, 'laser');
 	this._laserGroup.setAll('anchor.y', 0.5);
 	this._laserGroup.setAll('outOfBoundsKill', true);
 
@@ -42,23 +42,26 @@ Laser = function(x,y,type) {
 Laser.prototype.update = function() {
 
 	game.physics.collide(this._laserGroup, layer, laserLayerCollideHandler, null, this);
-	game.physics.collide(this._laserGroup, jumperBot._sprite, laserJumperBotCollideHandler, null ,this);
+	game.physics.collide(this._laserGroup, jumperBot, laserJumperBotCollideHandler, null, this);
 
 } // end update
 
 function laserLayerCollideHandler(laser, layer) {
 
-	laserExplode(laser, this);
+	laserExplode(laser, layer, this);
+	laser.kill();
+	//console.log(laser);
 
 }
 
-function laserJumperBotCollideHandler(laser, jumperBot) {
+function laserJumperBotCollideHandler(laser, jumper) {
 
-	laserExplode(laser, this);
-
+	laserExplode(laser, jumper, this);
+	laser.kill();
+	console.log(laser);
 }
 
-function laserExplode(laser, context) {
+function laserExplode(laser, target, context) {
 
 	if ( laser.body.touching.right ) {
 		context._laserEmitter.x = laser.x + (laser.body.width );
@@ -73,6 +76,8 @@ function laserExplode(laser, context) {
 		context._laserEmitter.start(true, 200, null, 5);
 	}
 	
-	laser.kill();
+	// var getIndex = context._laserGroup.getIndex(laser);
+	// console.log(getIndex);
+	// context._laserGroup.remove(getIndex);
 
 }

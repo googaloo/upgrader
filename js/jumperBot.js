@@ -8,7 +8,7 @@ JumperBot = function(x,y) {
 	this._sprite.animations.add('jump-right', [4,6,5,7], 12, false);
 	this._sprite.animations.add('idle', [1], 10, false);
 	this._sprite.body.gravity.y = 10;
-	this._sprite.immovable = true;
+	//this._sprite.immovable = true;
 
 	this._facing = 'right';
 
@@ -17,6 +17,7 @@ JumperBot = function(x,y) {
 JumperBot.prototype.update = function() {
 
 	game.physics.collide(this._sprite, layer);
+	game.physics.collide(this._sprite, player._laser._laserGroup, jumperDestroy);
 
 	if ( this._sprite.body.touching.left ) {
 		this._facing = 'right';
@@ -44,4 +45,9 @@ JumperBot.prototype.update = function() {
 		}
 	}
 
+}
+
+function jumperDestroy(jumpsBot, laser) {
+	jumpsBot.destroy();
+	console.log(game);
 }

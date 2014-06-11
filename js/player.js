@@ -239,8 +239,6 @@ Player.prototype.update = function() {
 
 		if ( !shieldOpen ) {
 
-			console.log('uhh');
-			//player._shield.x = player._sprite.body.width - (player._sprite.body.width / 2);
 			player._shield.x = player._sprite.x + (player._sprite.width / 2);
 			player._shield.y = player._sprite.y + (player._sprite.height / 2);
 			player._shield.visible = true;
