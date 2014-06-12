@@ -42,7 +42,7 @@ Laser = function(x,y,type) {
 Laser.prototype.update = function() {
 
 	game.physics.collide(this._laserGroup, layer, laserLayerCollideHandler, null, this);
-	game.physics.collide(this._laserGroup, jumperBot, laserJumperBotCollideHandler, null, this);
+	//game.physics.collide(this._laserGroup, jumperBot, laserJumperBotCollideHandler, null, this);
 
 } // end update
 
@@ -58,10 +58,11 @@ function laserJumperBotCollideHandler(laser, jumper) {
 
 	laserExplode(laser, jumper, this);
 	laser.kill();
-	console.log(laser);
+
 }
 
 function laserExplode(laser, target, context) {
+
 
 	if ( laser.body.touching.right ) {
 		context._laserEmitter.x = laser.x + (laser.body.width );

@@ -6,7 +6,7 @@ var map;
 var tileset;
 var layer;
 var player;
-var jumperBot;
+var jumperBotGroup;
 var turret;
 
 
@@ -42,9 +42,9 @@ function create() {
 
 	// PLAYER
 	player = new Player((game.world.width / 2) - 250, (game.world.height / 2));
-	
-	// JUMPERBOT
-	jumperBot = new JumperBot(Math.floor(Math.random() * game.width +1), Math.floor(Math.random() * game.height +1));
+
+	// JumperBots
+	jumperBotGroup = new JumperBot(game, 'jumperBot');
 
 	// TURRET 1
 	turret = new Turret(Math.floor(Math.random() * game.width +1), Math.floor(Math.random() * game.height +1));
@@ -55,6 +55,10 @@ function update() {
 
 	player.update();
 	turret.update();
-	jumperBot.update();
+	jumperBotGroup.update();
 
+}
+
+function updateGroup() {
+	this.update();
 }

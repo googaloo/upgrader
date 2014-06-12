@@ -1,53 +1,65 @@
-var JumperBot;
+JumperBot = function(game, image) {
 
-JumperBot = function(x,y) {
+	Phaser.Group.call(this, game);
 
-	this._sprite = game.add.sprite(x, y, 'jumperBot');
-	this._sprite.body.collideWorldBounds = true;
-	this._sprite.animations.add('jump-left', [3,1,2,0], 12, false);
-	this._sprite.animations.add('jump-right', [4,6,5,7], 12, false);
-	this._sprite.animations.add('idle', [1], 10, false);
-	this._sprite.body.gravity.y = 10;
-	//this._sprite.immovable = true;
+	for ( var i = 0; i < 5; i++ ) {
 
-	this._facing = 'right';
+        var sprite = this.create(game.world.randomX, game.world.randomY, image);
+        sprite.body.collideWorldBounds = true;
+		sprite.animations.add('jump-left', [3,1,2,0], 12, false);
+		sprite.animations.add('jump-right', [4,6,5,7], 12, false);
+		sprite.animations.add('idle', [1], 10, false);
+		sprite.body.gravity.y = 10;
+		sprite.facing = 'right';
+
+	}
 
 }
 
+JumperBot.prototype = Object.create(Phaser.Group.prototype);
+JumperBot.prototype.constructor = JumperBot;
 JumperBot.prototype.update = function() {
 
-	game.physics.collide(this._sprite, layer);
-	game.physics.collide(this._sprite, player._laser._laserGroup, jumperDestroy);
+	this.forEach(updateBots, this, false, this.sprite);
 
-	if ( this._sprite.body.touching.left ) {
-		this._facing = 'right';
+}
+
+JumperBot.prototype.jumpDestroy = function jumperDestroy(jumpsBot, laser, context) {
+	laserExplode(laser, jumpsBot, context);
+	jumpsBot.destroy();
+	laser.kill();
+	console.log(game);
+}
+
+function updateBots(jumperBot) {
+
+	game.physics.collide(jumperBot, layer);
+
+	if ( jumperBot.body.touching.left ) {
+		jumperBot.facing = 'right';
 	}
 
-	if ( this._sprite.body.touching.right ) {
-		this._facing = 'left';
+	if ( jumperBot.body.touching.right ) {
+		jumperBot.facing = 'left';
 	}
 
 	// JUMP
-	if ( this._sprite.body.touching.down ) {
+	if ( jumperBot.body.touching.down ) {
 
-		if ( this._facing == 'left' ) {
+		if ( jumperBot.facing == 'left' ) {
 
-			this._sprite.animations.play('jump-left');
-			this._sprite.body.velocity.y = -375;
-			this._sprite.body.velocity.x = -150;
+			jumperBot.animations.play('jump-left');
+			jumperBot.body.velocity.y = -375;
+			jumperBot.body.velocity.x = -150;
 
-		} else if ( this._facing == 'right' ) {
+		} else if ( jumperBot.facing == 'right' ) {
 
-			this._sprite.animations.play('jump-right');
-			this._sprite.body.velocity.y = -375;
-			this._sprite.body.velocity.x = 150;
+			jumperBot.animations.play('jump-right');
+			jumperBot.body.velocity.y = -375;
+			jumperBot.body.velocity.x = 150;
 
 		}
+		
 	}
 
-}
-
-function jumperDestroy(jumpsBot, laser) {
-	jumpsBot.destroy();
-	console.log(game);
 }
