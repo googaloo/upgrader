@@ -57,7 +57,7 @@ Player = function(x,y) {
 	}
 
 	// LASER (x, y, type of laser (ie standard, rapid, continuious)) /////////////////////////
-	this._laser = new Laser(0, 0, 'standard');
+	this.laser = new Laser(game, 'laser');
 
 	// SHIELD ////////////////////////////////////////////////////////////////////////////////
 	shieldButton = game.input.keyboard.addKey(Phaser.Keyboard.SHIFT);
@@ -98,7 +98,7 @@ Player.prototype.update = function() {
 
 	game.physics.collide(this._sprite, layer);
 	game.physics.collide(this._blasterEmitter, layer);
-	this._laser.update();
+	this.laser.update();
 	
 
 
@@ -196,7 +196,7 @@ Player.prototype.update = function() {
 		if ( game.time.now > blasterTime && !shieldOpen ) {
 
 			this._blasterBurst();
-			this._laser._fire();
+			this.laser.fire();
 
 			playerBlast.scale.x = 0.1;
 			playerBlast.scale.y = 0.1;

@@ -1,56 +1,77 @@
-var Laser,
-bullet;
+Laser = function(game, image) {
 
-Laser = function(x,y,type) {
+	Phaser.Group.call(this, game);
 
-	// LASERS
-	this._laserGroup = game.add.group();
-	this._laserGroup.createMultiple(10, 'laser');
-	this._laserGroup.setAll('anchor.y', 0.5);
-	this._laserGroup.setAll('outOfBoundsKill', true);
+	this.createMultiple(10, image);
+	this.setAll('anchor.y', 0.5);
+	this.setAll('outofBoundsKill', true);
 
 	// LASER EXPLOSION ON COLLIDE
-	this._laserEmitter = game.add.emitter(this._laserGroup.x, this._laserGroup.y);
-	this._laserEmitter.makeParticles('playerBlasterEmitter');
-	this._laserEmitter.gravity = 10;
-	this._laserEmitter.bounce = 20;
-	this._laserEmitter.bounce.x = 0.3;
-	this._laserEmitter.bounce.y = 0.3;
+	this.laserEmitter = game.add.emitter(this.x, this.y);
+	this.laserEmitter.makeParticles('playerBlasterEmitter');
+	this.laserEmitter.gravity = 10;
+	this.laserEmitter.bounce = 20;
+	this.laserEmitter.bounce.x = 0.3;
+	this.laserEmitter.bounce.y = 0.3;
 
-	this._fire = fireLaser;
+}
 
-	function fireLaser() {
+Laser.prototype = Object.create(Phaser.Group.prototype);
+Laser.prototype.constructor = Laser;	
 
-		bullet = this._laserGroup.getFirstExists(false);
+Laser.prototype.fire = function() {
 
-		if ( bullet ) {
+	var singleLaser = this.getFirstExists(false);
 
-			if ( player._facing == 'right' ) {
-				bullet.reset(player._sprite.x + (player._sprite.body.width - 30), player._sprite.y + 60);
-				bullet.body.velocity.x = 2000;
-			} else if ( player._facing == 'left' ) {
-				bullet.reset(player._sprite.x, player._sprite.y + 60);
-				bullet.body.velocity.x = -2000;
-			}
+	if ( singleLaser ) {
 
+		if ( player._facing == 'right' ) {
+			singleLaser.reset(player._sprite.x + (player._sprite.body.width - 30), player._sprite.y + 60);
+			singleLaser.body.velocity.x = 2000;
+		} else if ( player._facing == 'left' ) {
+			singleLaser.reset(player._sprite.x, player._sprite.y + 60);
+			singleLaser.body.velocity.x = -2000;
 		}
 
 	}
 
 }
 
+laserExplode = function(laser, target, context) {
+
+	if ( laser.body.touching.right ) {
+		player.laser.laserEmitter.x = laser.x + (laser.body.width );
+		player.laser.laserEmitter.y = laser.y;
+		player.laser.laserEmitter.maxParticleSpeed.x = -550;
+		player.laser.laserEmitter.start(true, 200, null, 5);
+
+	} else if ( laser.body.touching.left ) {
+		player.laser.laserEmitter.x = laser.x;
+		player.laser.laserEmitter.y = laser.y;
+		player.laser.laserEmitter.maxParticleSpeed.x = 550;
+		player.laser.laserEmitter.start(true, 200, null, 5);
+	}
+
+	laser.kill();
+
+}
+
 Laser.prototype.update = function() {
 
-	game.physics.collide(this._laserGroup, layer, laserLayerCollideHandler, null, this);
-	//game.physics.collide(this._laserGroup, jumperBot, laserJumperBotCollideHandler, null, this);
+	this.forEach(updateLasers, this, false);
+	
 
 } // end update
+
+function updateLasers(singleLaser) {
+	game.physics.collide(singleLaser, jumperBotGroup, laserExplode );
+	game.physics.collide(singleLaser, layer, laserLayerCollideHandler);
+}
 
 function laserLayerCollideHandler(laser, layer) {
 
 	laserExplode(laser, layer, this);
 	laser.kill();
-	//console.log(laser);
 
 }
 
@@ -58,27 +79,5 @@ function laserJumperBotCollideHandler(laser, jumper) {
 
 	laserExplode(laser, jumper, this);
 	laser.kill();
-
-}
-
-function laserExplode(laser, target, context) {
-
-
-	if ( laser.body.touching.right ) {
-		context._laserEmitter.x = laser.x + (laser.body.width );
-		context._laserEmitter.y = laser.y;
-		context._laserEmitter.maxParticleSpeed.x = -550;
-		context._laserEmitter.start(true, 200, null, 5);
-
-	} else if ( laser.body.touching.left ) {
-		context._laserEmitter.x = laser.x;
-		context._laserEmitter.y = laser.y;
-		context._laserEmitter.maxParticleSpeed.x = 550;
-		context._laserEmitter.start(true, 200, null, 5);
-	}
-	
-	// var getIndex = context._laserGroup.getIndex(laser);
-	// console.log(getIndex);
-	// context._laserGroup.remove(getIndex);
 
 }

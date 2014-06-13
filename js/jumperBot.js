@@ -20,46 +20,45 @@ JumperBot.prototype = Object.create(Phaser.Group.prototype);
 JumperBot.prototype.constructor = JumperBot;
 JumperBot.prototype.update = function() {
 
-	this.forEach(updateBots, this, false, this.sprite);
+	this.forEach(updateBots, this, false);
 
 }
 
-JumperBot.prototype.jumpDestroy = function jumperDestroy(jumpsBot, laser, context) {
-	laserExplode(laser, jumpsBot, context);
-	jumpsBot.destroy();
-	laser.kill();
-	console.log(game);
+JumperBot.prototype.jumpDestroy = function(bot, laser) {
+
+	bot.kill();
 }
 
-function updateBots(jumperBot) {
+function updateBots(bot) {
 
-	game.physics.collide(jumperBot, layer);
+	game.physics.collide(bot, layer);
+	game.physics.collide(bot, player.laser, this.jumpDestroy);
 
-	if ( jumperBot.body.touching.left ) {
-		jumperBot.facing = 'right';
+	if ( bot.body.touching.left ) {
+		bot.facing = 'right';
 	}
 
-	if ( jumperBot.body.touching.right ) {
-		jumperBot.facing = 'left';
+	if ( bot.body.touching.right ) {
+		bot.facing = 'left';
 	}
 
 	// JUMP
-	if ( jumperBot.body.touching.down ) {
+	if ( bot.body.touching.down ) {
 
-		if ( jumperBot.facing == 'left' ) {
+		if ( bot.facing == 'left' ) {
 
-			jumperBot.animations.play('jump-left');
-			jumperBot.body.velocity.y = -375;
-			jumperBot.body.velocity.x = -150;
+			bot.animations.play('jump-left');
+			bot.body.velocity.y = -375;
+			bot.body.velocity.x = -150;
 
-		} else if ( jumperBot.facing == 'right' ) {
+		} else if ( bot.facing == 'right' ) {
 
-			jumperBot.animations.play('jump-right');
-			jumperBot.body.velocity.y = -375;
-			jumperBot.body.velocity.x = 150;
+			bot.animations.play('jump-right');
+			bot.body.velocity.y = -375;
+			bot.body.velocity.x = 150;
 
 		}
-		
+
 	}
 
 }
