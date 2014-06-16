@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"jump",
+				"jumperFireTime"
+			],
+			[
+				"_las",
+				"_laserGroup"
+			],
+			[
+				"jumperBo",
+				"jumperBotGroup"
+			],
+			[
+				"laser",
+				"_laser"
+			],
+			[
 				"fire",
 				"fireBlaster"
 			],
@@ -151,7 +167,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 958,
+				"buffer_size": 1020,
 				"line_ending": "Unix"
 			}
 		},
@@ -159,15 +175,7 @@
 			"file": "js/game.js",
 			"settings":
 			{
-				"buffer_size": 1866,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "js/jumperBot.js",
-			"settings":
-			{
-				"buffer_size": 1052,
+				"buffer_size": 1824,
 				"line_ending": "Unix"
 			}
 		},
@@ -183,7 +191,15 @@
 			"file": "js/player.js",
 			"settings":
 			{
-				"buffer_size": 7736,
+				"buffer_size": 7729,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/jumperBot.js",
+			"settings":
+			{
+				"buffer_size": 2502,
 				"line_ending": "Unix"
 			}
 		},
@@ -191,7 +207,15 @@
 			"file": "js/laser.js",
 			"settings":
 			{
-				"buffer_size": 2383,
+				"buffer_size": 1934,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/global.js",
+			"settings":
+			{
+				"buffer_size": 43,
 				"line_ending": "Unix"
 			}
 		}
@@ -364,9 +388,9 @@
 	},
 	"file_history":
 	[
+		"/Applications/MAMP/htdocs/upgrader/assets/cave_tilemap.json",
 		"/Applications/MAMP/htdocs/upgrader/js/turret.hs",
 		"/Applications/MAMP/htdocs/upgrader/README.txt",
-		"/Applications/MAMP/htdocs/upgrader/assets/cave_tilemap.json",
 		"/Applications/MAMP/htdocs/upgrader/js/phaser.min.js",
 		"/Applications/MAMP/htdocs/phaser_tutorial_02/part7.html",
 		"/Applications/MAMP/htdocs/phaser_tutorial_02/part6.html",
@@ -509,6 +533,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"fire",
+			"group",
+			"this",
+			"_laserEmitter",
+			"this.laser",
+			"bullet",
+			"_laserEmitter",
+			"this",
+			"context",
+			"type",
+			"collide",
+			"f",
+			"jumperBot",
+			"sprite",
+			"facing",
+			"this.",
+			"_",
+			"._sprite",
+			"_",
+			"top",
+			"first",
+			"group",
 			"bullet",
 			"context",
 			"cheese",
@@ -614,29 +660,7 @@
 			"testObj",
 			"volume",
 			"ajax",
-			"boop",
-			"val",
-			"consol",
-			"console.log",
-			"coo",
-			"cool",
-			"display",
-			"saved-draft-success",
-			"animation",
-			"click",
-			"num",
-			"datepicker",
-			"submit",
-			"content",
-			"window.content",
-			"create",
-			"submit",
-			"create",
-			"ate partners, a trib",
-			"2566",
-			"border",
-			"submit",
-			"content"
+			"boop"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -665,15 +689,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 958,
+						"buffer_size": 1020,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								581,
-								581
+								653,
+								653
 							]
 						],
 						"settings":
@@ -796,15 +820,15 @@
 					"file": "js/game.js",
 					"settings":
 					{
-						"buffer_size": 1866,
+						"buffer_size": 1824,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								707,
-								712
+								838,
+								850
 							]
 						],
 						"settings":
@@ -924,18 +948,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "js/jumperBot.js",
+					"file": "js/turrets.js",
 					"settings":
 					{
-						"buffer_size": 1052,
+						"buffer_size": 1482,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								513,
-								513
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1055,18 +1079,18 @@
 				},
 				{
 					"buffer": 3,
-					"file": "js/turrets.js",
+					"file": "js/player.js",
 					"settings":
 					{
-						"buffer_size": 1482,
+						"buffer_size": 7729,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								38,
-								38
+								7729,
+								7729
 							]
 						],
 						"settings":
@@ -1186,18 +1210,18 @@
 				},
 				{
 					"buffer": 4,
-					"file": "js/player.js",
+					"file": "js/jumperBot.js",
 					"settings":
 					{
-						"buffer_size": 7736,
+						"buffer_size": 2502,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1696,
-								1702
+								1603,
+								1603
 							]
 						],
 						"settings":
@@ -1310,7 +1334,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3210.0,
+						"translation.y": 5.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1320,15 +1344,15 @@
 					"file": "js/laser.js",
 					"settings":
 					{
-						"buffer_size": 2383,
+						"buffer_size": 1934,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								477,
-								477
+								632,
+								632
 							]
 						],
 						"settings":
@@ -1441,7 +1465,137 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 178.0,
+						"translation.y": 122.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "js/global.js",
+					"settings":
+					{
+						"buffer_size": 43,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1490,6 +1644,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"tilema",
+				"assets/cave_tilemap.json"
+			],
 			[
 				"json",
 				"assets/cave_tilemap.json"
@@ -1997,10 +2155,6 @@
 			[
 				"easel",
 				"wp-content/themes/theoryserum/js/easeljs-0.6.1.min.js"
-			],
-			[
-				"conf",
-				"wp-config-sample.php"
 			]
 		],
 		"width": 0.0

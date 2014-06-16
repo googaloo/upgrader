@@ -1,4 +1,6 @@
-var jumperFireTime;
+var jumperFireTime,
+	jumperFire;
+
 
 JumperBot = function(game, image, num_bots) {
 
@@ -14,12 +16,37 @@ JumperBot = function(game, image, num_bots) {
 		sprite.body.gravity.y = 10;
 		sprite.facing = 'right';
 
+		sprite.jumperBullets = game.add.group();
+		sprite.jumperBullets.createMultiple(10, 'laser');
+		sprite.jumperFireTime = game.time.now + 200;
+
+		sprite.fire = function() {
+
+			console.log();
+
+			var singleShot = this.jumperBullets.getFirstExists(false);
+
+			if ( singleShot && game.time.now > this.jumperFireTime ) {
+
+				if ( this.facing == 'left' ) {
+
+					singleShot.reset(this.x, this.y);
+					singleShot.body.velocity.x = jumperBulletSpeed * -1;
+
+				} else if ( this.facing == 'right' ) {
+
+					singleShot.reset(this.x, this.y);
+					singleShot.body.velocity.x = jumperBulletSpeed;
+
+				}
+
+				this.jumperFireTime = game.time.now + 200;
+
+			}
+
+		}
+
 	}
-
-	this.jumperBullets = game.add.group();
-	this.jumperBullets.createMultiple(10, 'laser');
-
-	jumperFireTime = game.time.now + 200
 
 }
 
@@ -33,7 +60,9 @@ JumperBot.prototype.update = function() {
 
 JumperBot.prototype.fire = function(bot, dir) {
 
-	var singleShot = jumperBotGroup.jumperBullets.getFirstExists(false);
+	console.log('fire!');
+
+	var singleShot = bot.jumperBullets.getFirstExists(false);
 
 	if ( singleShot && game.time.now > jumperFireTime ) {
 
@@ -63,7 +92,7 @@ function updateBots(bot) {
 
 	game.physics.collide(bot, layer);
 	game.physics.overlap(bot, player.laser, jumperBotLaserShot);
-	game.physics.collide(jumperBotGroup.jumperBullets, layer, layerShoot);
+	game.physics.collide(bot.jumperBullets, layer, layerShoot);
 
 	if ( playerPosX > bot.x ) {
 		bot.facing = 'right';
@@ -73,7 +102,7 @@ function updateBots(bot) {
 		bot.facing = 'left';
 	}
 
-	// JUMP AND FIRE
+	// JUMP
 	if ( bot.body.touching.down ) {
 
 		if ( bot.facing == 'left' ) {
@@ -96,8 +125,7 @@ function updateBots(bot) {
 	var playerBotYdiff = playerPosY - bot.y;
 	if ( playerBotYdiff < 20 && playerBotYdiff > -20 && bot.exists ) {
 
-		jumperBotGroup.fire(bot, bot.facing);
-		jumperFireTime = game.time.now + 200;
+		bot.fire();
 
 	}
 
