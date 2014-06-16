@@ -33,6 +33,7 @@ function preload() {
 
 function create() {
 
+	// MAP
 	map = game.add.tilemap('level1');
 	tileset = game.add.tileset('tiles');
 	tileset.setCollisionRange(0, tileset.total - 1, true, true, true, true);
@@ -44,7 +45,7 @@ function create() {
 	player = new Player((game.world.width / 2) - 250, (game.world.height / 2));
 
 	// JumperBots
-	jumperBotGroup = new JumperBot(game, 'jumperBot');
+	jumperBotGroup = new JumperBot(game, 'jumperBot', 5);
 
 	// TURRET 1
 	turret = new Turret(Math.floor(Math.random() * game.width +1), Math.floor(Math.random() * game.height +1));
@@ -57,8 +58,4 @@ function update() {
 	turret.update();
 	jumperBotGroup.update();
 
-}
-
-function updateGroup() {
-	this.update();
 }

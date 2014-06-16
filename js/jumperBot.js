@@ -1,8 +1,10 @@
-JumperBot = function(game, image) {
+var jumperFireTime;
+
+JumperBot = function(game, image, num_bots) {
 
 	Phaser.Group.call(this, game);
 
-	for ( var i = 0; i < 5; i++ ) {
+	for ( var i = 0; i < num_bots; i++ ) {
 
         var sprite = this.create(game.world.randomX, game.world.randomY, image);
         sprite.body.collideWorldBounds = true;
@@ -14,6 +16,11 @@ JumperBot = function(game, image) {
 
 	}
 
+	this.jumperBullets = game.add.group();
+	this.jumperBullets.createMultiple(10, 'laser');
+
+	jumperFireTime = game.time.now + 200
+
 }
 
 JumperBot.prototype = Object.create(Phaser.Group.prototype);
@@ -24,25 +31,49 @@ JumperBot.prototype.update = function() {
 
 }
 
-JumperBot.prototype.jumpDestroy = function(bot, laser) {
+JumperBot.prototype.fire = function(bot, dir) {
 
-	bot.kill();
+	var singleShot = jumperBotGroup.jumperBullets.getFirstExists(false);
+
+	if ( singleShot && game.time.now > jumperFireTime ) {
+
+		if ( dir == 'left' ) {
+
+			singleShot.reset(bot.x, bot.y);
+			singleShot.body.velocity.x = jumperBulletSpeed * -1;
+
+		} else if ( dir == 'right' ) {
+
+			singleShot.reset(bot.x, bot.y);
+			singleShot.body.velocity.x = jumperBulletSpeed;
+
+		}
+
+		jumperFireTime = game.time.now + 200;
+
+	}
+
 }
 
+// Update for each JumperBot
 function updateBots(bot) {
 
-	game.physics.collide(bot, layer);
-	game.physics.collide(bot, player.laser, this.jumpDestroy);
+	var playerPosX = player._sprite.body.x;
+	var playerPosY = player._sprite.body.y;
 
-	if ( bot.body.touching.left ) {
+	game.physics.collide(bot, layer);
+	game.physics.overlap(bot, player.laser, jumperBotLaserShot);
+	game.physics.collide(jumperBotGroup.jumperBullets, layer, layerShoot);
+
+	if ( playerPosX > bot.x ) {
 		bot.facing = 'right';
 	}
 
-	if ( bot.body.touching.right ) {
+	if ( playerPosX < bot.x ) {
 		bot.facing = 'left';
 	}
 
-	// JUMP
+	// JUMP AND FIRE
 	if ( bot.body.touching.down ) {
 
 		if ( bot.facing == 'left' ) {
@@ -60,5 +91,27 @@ function updateBots(bot) {
 		}
 
 	}
+
+	// Check if Jumper is between 20 and -20 Y of the player
+	var playerBotYdiff = playerPosY - bot.y;
+	if ( playerBotYdiff < 20 && playerBotYdiff > -20 && bot.exists ) {
+
+		jumperBotGroup.fire(bot, bot.facing);
+		jumperFireTime = game.time.now + 200;
+
+	}
+
+}
+
+function jumperBotLaserShot(bot, singleLaser) {
+
+	player.laser.laserExplode(singleLaser, singleLaser.body.velocity.x);
+	bot.kill();
+
+}
+
+function layerShoot(bullet, layer) {
+
+	bullet.kill();
 
 }
