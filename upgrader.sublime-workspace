@@ -199,7 +199,7 @@
 			"file": "js/jumperBot.js",
 			"settings":
 			{
-				"buffer_size": 2502,
+				"buffer_size": 2969,
 				"line_ending": "Unix"
 			}
 		},
@@ -533,6 +533,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"bot",
+			"sprite",
+			"jump",
 			"fire",
 			"group",
 			"this",
@@ -657,10 +660,7 @@
 			"num-articles",
 			"num",
 			"submi",
-			"testObj",
-			"volume",
-			"ajax",
-			"boop"
+			"testObj"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -681,7 +681,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -827,8 +827,8 @@
 						"selection":
 						[
 							[
-								838,
-								850
+								1076,
+								1076
 							]
 						],
 						"settings":
@@ -1203,7 +1203,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 24.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1213,15 +1213,15 @@
 					"file": "js/jumperBot.js",
 					"settings":
 					{
-						"buffer_size": 2502,
+						"buffer_size": 2969,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1603,
-								1603
+								1150,
+								1153
 							]
 						],
 						"settings":
@@ -1334,7 +1334,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1351,8 +1351,8 @@
 						"selection":
 						[
 							[
-								632,
-								632
+								473,
+								474
 							]
 						],
 						"settings":
@@ -1465,7 +1465,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 122.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -93,6 +93,7 @@ function updateBots(bot) {
 	game.physics.collide(bot, layer);
 	game.physics.overlap(bot, player.laser, jumperBotLaserShot);
 	game.physics.collide(bot.jumperBullets, layer, layerShoot);
+	game.physics.overlap(bot.jumperBullets, player._shield, jumperBulletShield);
 
 	if ( playerPosX > bot.x ) {
 		bot.facing = 'right';
@@ -139,6 +140,12 @@ function jumperBotLaserShot(bot, singleLaser) {
 }
 
 function layerShoot(bullet, layer) {
+
+	bullet.kill();
+
+}
+
+function jumperBulletShield(shield, bullet) {
 
 	bullet.kill();
 
