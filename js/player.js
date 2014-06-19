@@ -62,7 +62,7 @@ Player = function(x,y) {
 	// SHIELD ////////////////////////////////////////////////////////////////////////////////
 	shieldButton = game.input.keyboard.addKey(Phaser.Keyboard.SHIFT);
 
-	this._shield = game.add.sprite(this._sprite.x, this._sprite.y, 'playerShield');
+	this._shield = game.add.sprite(0, 0, 'playerShield');
 	this._shield.scale.x = 0.1;
 	this._shield.scale.y = 0.1;
 	this._shield.anchor.x = 0.5;

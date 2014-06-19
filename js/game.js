@@ -7,6 +7,7 @@ var tileset;
 var layer;
 var player;
 var jumperBotGroup;
+var ninjaBotGroup;
 var turret;
 
 
@@ -24,6 +25,8 @@ function preload() {
 	game.load.image('playerShield', 'assets/player-shield.png');
 
 	game.load.spritesheet('jumperBot', 'assets/jumper-bot.png', 48, 120);
+
+	game.load.spritesheet('ninjaBot', 'http://localhost:8888/upgrader/assets/ninja-bot.png', 62, 54);
 
 	game.load.image('turretCannon', 'assets/turret-cannon.png');
 	game.load.image('turretJoint', 'assets/turret-joint.png');
@@ -47,6 +50,9 @@ function create() {
 	// JumperBots
 	jumperBotGroup = new JumperBot(game, 'jumperBot', 5);
 
+	// NinjaBots
+	ninjaBotGroup = new NinjaBot(game, 'ninjaBot', 2);
+
 	// TURRET 1
 	turret = new Turret(Math.floor(Math.random() * game.width +1), Math.floor(Math.random() * game.height +1));
 
@@ -57,5 +63,6 @@ function update() {
 	player.update();
 	turret.update();
 	jumperBotGroup.update();
+	ninjaBotGroup.update();
 
 }
