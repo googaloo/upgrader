@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"ninjaBot",
+				"ninjaBotGroup"
+			],
+			[
 				"jump",
 				"jumperFireTime"
 			],
@@ -167,7 +171,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1020,
+				"buffer_size": 1064,
 				"line_ending": "Unix"
 			}
 		},
@@ -175,7 +179,7 @@
 			"file": "js/game.js",
 			"settings":
 			{
-				"buffer_size": 1824,
+				"buffer_size": 2035,
 				"line_ending": "Unix"
 			}
 		},
@@ -191,7 +195,7 @@
 			"file": "js/player.js",
 			"settings":
 			{
-				"buffer_size": 7729,
+				"buffer_size": 7703,
 				"line_ending": "Unix"
 			}
 		},
@@ -199,7 +203,15 @@
 			"file": "js/jumperBot.js",
 			"settings":
 			{
-				"buffer_size": 2969,
+				"buffer_size": 3114,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/ninjaBot.js",
+			"settings":
+			{
+				"buffer_size": 3370,
 				"line_ending": "Unix"
 			}
 		},
@@ -388,6 +400,7 @@
 	},
 	"file_history":
 	[
+		"/Users/rlodom/Desktop/forge.sql",
 		"/Applications/MAMP/htdocs/upgrader/assets/cave_tilemap.json",
 		"/Applications/MAMP/htdocs/upgrader/js/turret.hs",
 		"/Applications/MAMP/htdocs/upgrader/README.txt",
@@ -514,8 +527,7 @@
 		"/Applications/MAMP/htdocs/email-newsletter-generator-2.0/application/models/Top_title_date.php",
 		"/Applications/MAMP/bin/php/php5.3.14/conf/php.ini",
 		"/Applications/MAMP/bin/php/php5.2.17/conf/php.ini",
-		"/Users/rlodom/Desktop/University-of-Phoenix-New-Strategy-Template.html",
-		"/Users/rlodom/Desktop/throw_away_html"
+		"/Users/rlodom/Desktop/University-of-Phoenix-New-Strategy-Template.html"
 	],
 	"find":
 	{
@@ -533,6 +545,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".play",
+			"JumperBot",
+			"sprite",
+			"JumperBot",
 			"bot",
 			"sprite",
 			"jump",
@@ -656,11 +672,7 @@
 			"artCount\n\n\n\n\nartCount\nartCount",
 			"artcount",
 			"createArticle",
-			"create",
-			"num-articles",
-			"num",
-			"submi",
-			"testObj"
+			"create"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -681,7 +693,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -689,15 +701,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 1020,
+						"buffer_size": 1064,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								653,
-								653
+								581,
+								581
 							]
 						],
 						"settings":
@@ -820,15 +832,15 @@
 					"file": "js/game.js",
 					"settings":
 					{
-						"buffer_size": 1824,
+						"buffer_size": 2035,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1076,
-								1076
+								245,
+								245
 							]
 						],
 						"settings":
@@ -1082,15 +1094,15 @@
 					"file": "js/player.js",
 					"settings":
 					{
-						"buffer_size": 7729,
+						"buffer_size": 7703,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7729,
-								7729
+								1927,
+								1927
 							]
 						],
 						"settings":
@@ -1203,7 +1215,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 24.0,
+						"translation.y": 674.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1213,15 +1225,15 @@
 					"file": "js/jumperBot.js",
 					"settings":
 					{
-						"buffer_size": 2969,
+						"buffer_size": 3114,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1150,
-								1153
+								1174,
+								1183
 							]
 						],
 						"settings":
@@ -1334,13 +1346,144 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 489.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
+					"file": "js/ninjaBot.js",
+					"settings":
+					{
+						"buffer_size": 3370,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1451,
+								1451
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "js/laser.js",
 					"settings":
 					{
@@ -1465,13 +1608,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 491.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "js/global.js",
 					"settings":
 					{

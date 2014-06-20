@@ -8,8 +8,8 @@ NinjaBot = function(game, image, num_bots) {
 
         var sprite = this.create(game.world.randomX, game.world.randomY, image);
         sprite.body.collideWorldBounds = true;
-		//sprite.animations.add('jump-left', [3,1,2,0], 12, false);
-		//sprite.animations.add('jump-right', [4,6,5,7], 12, false);
+		sprite.animations.add('float-left', [0,2], 12, true);
+		sprite.animations.add('float-right', [1,3], 12, true);
 		sprite.animations.add('idle', [0], 10, false);
 		sprite.animations.play('idle');
 		sprite.body.gravity.y = 10;
@@ -53,8 +53,7 @@ NinjaBot.prototype = Object.create(Phaser.Group.prototype);
 NinjaBot.prototype.constructor = NinjaBot;
 NinjaBot.prototype.update = function() {
 
-	//this.forEach(updateBots, this, false);
-	game.physics.collide(this, layer);
+	this.forEach(updateNinjaBots, this, false);
 
 }
 
@@ -84,43 +83,43 @@ NinjaBot.prototype.update = function() {
 
 // }
 
-// // Update for each JumperBot
-// function updateBots(bot) {
+// Update for each NinjaBot
+function updateNinjaBots(bot) {
 
-// 	var playerPosX = player._sprite.body.x;
-// 	var playerPosY = player._sprite.body.y;
+	var playerPosX = player._sprite.body.x;
+	var playerPosY = player._sprite.body.y;
 
-// 	game.physics.collide(bot, layer);
-// 	game.physics.overlap(bot, player.laser, jumperBotLaserShot);
-// 	game.physics.collide(bot.jumperBullets, layer, layerShoot);
-// 	game.physics.overlap(bot.jumperBullets, player._shield, jumperBulletShield);
+	game.physics.collide(bot, layer);
+	// game.physics.overlap(bot, player.laser, jumperBotLaserShot);
+	// game.physics.collide(bot.jumperBullets, layer, layerShoot);
+	// game.physics.overlap(bot.jumperBullets, player._shield, jumperBulletShield);
 
-// 	if ( playerPosX > bot.x ) {
-// 		bot.facing = 'right';
-// 	}
+	if ( playerPosX > bot.x ) {
+		bot.facing = 'right';
+	}
 
-// 	if ( playerPosX < bot.x ) {
-// 		bot.facing = 'left';
-// 	}
+	if ( playerPosX < bot.x ) {
+		bot.facing = 'left';
+	}
 
-// 	// JUMP
-// 	if ( bot.body.touching.down ) {
+	// JUMP
+	if ( bot.body.touching.down ) {
 
-// 		if ( bot.facing == 'left' ) {
+		if ( bot.facing == 'left' ) {
 
-// 			bot.animations.play('jump-left');
-// 			bot.body.velocity.y = -375;
-// 			bot.body.velocity.x = -150;
+			bot.animations.play('float-left');
+			bot.body.velocity.y = -375;
+			bot.body.velocity.x = -150;
 
-// 		} else if ( bot.facing == 'right' ) {
+		} else if ( bot.facing == 'right' ) {
 
-// 			bot.animations.play('jump-right');
-// 			bot.body.velocity.y = -375;
-// 			bot.body.velocity.x = 150;
+			bot.animations.play('float-right');
+			bot.body.velocity.y = -375;
+			bot.body.velocity.x = 150;
 
-// 		}
+		}
 
-// 	}
+	}
 
 // 	// Check if Jumper is between 20 and -20 Y of the player
 // 	var playerBotYdiff = playerPosY - bot.y;
@@ -149,4 +148,4 @@ NinjaBot.prototype.update = function() {
 
 // 	bullet.kill();
 
-// }
+}

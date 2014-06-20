@@ -54,7 +54,7 @@ JumperBot.prototype = Object.create(Phaser.Group.prototype);
 JumperBot.prototype.constructor = JumperBot;
 JumperBot.prototype.update = function() {
 
-	this.forEach(updateBots, this, false);
+	this.forEach(updateJumperBots, this, false);
 
 }
 
@@ -85,7 +85,7 @@ JumperBot.prototype.fire = function(bot, dir) {
 }
 
 // Update for each JumperBot
-function updateBots(bot) {
+function updateJumperBots(bot) {
 
 	var playerPosX = player._sprite.body.x;
 	var playerPosY = player._sprite.body.y;
