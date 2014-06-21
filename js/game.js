@@ -48,7 +48,7 @@ function create() {
 	player = new Player((game.world.width / 2) - 250, (game.world.height / 2));
 
 	// JumperBots
-	jumperBotGroup = new JumperBot(game, 'jumperBot', 5);
+	jumperBotGroup = new JumperBot(game, 'jumperBot', 2);
 
 	// NinjaBots
 	ninjaBotGroup = new NinjaBot(game, 'ninjaBot', 2);

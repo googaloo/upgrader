@@ -203,7 +203,7 @@
 			"file": "js/jumperBot.js",
 			"settings":
 			{
-				"buffer_size": 3114,
+				"buffer_size": 3126,
 				"line_ending": "Unix"
 			}
 		},
@@ -211,7 +211,7 @@
 			"file": "js/ninjaBot.js",
 			"settings":
 			{
-				"buffer_size": 3370,
+				"buffer_size": 3259,
 				"line_ending": "Unix"
 			}
 		},
@@ -693,7 +693,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -1215,7 +1215,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 674.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1225,15 +1225,15 @@
 					"file": "js/jumperBot.js",
 					"settings":
 					{
-						"buffer_size": 3114,
+						"buffer_size": 3126,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1174,
-								1183
+								1904,
+								1904
 							]
 						],
 						"settings":
@@ -1346,7 +1346,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 489.0,
+						"translation.y": 248.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1356,15 +1356,15 @@
 					"file": "js/ninjaBot.js",
 					"settings":
 					{
-						"buffer_size": 3370,
+						"buffer_size": 3259,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1451,
-								1451
+								297,
+								297
 							]
 						],
 						"settings":
@@ -1477,7 +1477,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 225.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

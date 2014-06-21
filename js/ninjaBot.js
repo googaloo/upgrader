@@ -12,7 +12,7 @@ NinjaBot = function(game, image, num_bots) {
 		sprite.animations.add('float-right', [1,3], 12, true);
 		sprite.animations.add('idle', [0], 10, false);
 		sprite.animations.play('idle');
-		sprite.body.gravity.y = 10;
+		//sprite.body.gravity.y = 10;
 		sprite.facing = 'right';
 
 		// sprite.jumperBullets = game.add.group();
@@ -90,36 +90,66 @@ function updateNinjaBots(bot) {
 	var playerPosY = player._sprite.body.y;
 
 	game.physics.collide(bot, layer);
+	game.physics.collide(bot, ninjaBotGroup);
+	game.physics.collide(bot, jumperBotGroup);
 	// game.physics.overlap(bot, player.laser, jumperBotLaserShot);
 	// game.physics.collide(bot.jumperBullets, layer, layerShoot);
 	// game.physics.overlap(bot.jumperBullets, player._shield, jumperBulletShield);
 
 	if ( playerPosX > bot.x ) {
+
 		bot.facing = 'right';
+		bot.body.velocity.x = 150;
 	}
 
 	if ( playerPosX < bot.x ) {
+
 		bot.facing = 'left';
+		bot.body.velocity.x = -150;
 	}
+
+	if ( playerPosY > bot.y ) {
+
+		//bot.facing = 'left';
+		bot.body.velocity.y = 150;
+	}
+
+	if ( playerPosY < bot.y ) {
+
+		//bot.facing = 'left';
+		bot.body.velocity.y = -150;
+	}
+
+	// Facing Animations
+	if ( bot.facing == 'left' ) {
+
+		bot.animations.play('float-left');	
+
+	} else if ( bot.facing == 'right' ) {
+
+		bot.animations.play('float-right');
+
+	}
+	
 
 	// JUMP
-	if ( bot.body.touching.down ) {
+	//if ( bot.body.touching.down ) {
 
-		if ( bot.facing == 'left' ) {
+		// if ( bot.facing == 'left' ) {
 
-			bot.animations.play('float-left');
-			bot.body.velocity.y = -375;
-			bot.body.velocity.x = -150;
+		// 	bot.animations.play('float-left');
+		// 	bot.body.velocity.y = -375;
+		// 	bot.body.velocity.x = -150;
 
-		} else if ( bot.facing == 'right' ) {
+		// } else if ( bot.facing == 'right' ) {
 
-			bot.animations.play('float-right');
-			bot.body.velocity.y = -375;
-			bot.body.velocity.x = 150;
+		// 	bot.animations.play('float-right');
+		// 	bot.body.velocity.y = -375;
+		// 	bot.body.velocity.x = 150;
 
-		}
+		// }
 
-	}
+	//}
 
 // 	// Check if Jumper is between 20 and -20 Y of the player
 // 	var playerBotYdiff = playerPosY - bot.y;
