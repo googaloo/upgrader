@@ -1,5 +1,3 @@
-
-
 NinjaBot = function(game, image, num_bots) {
 
 	Phaser.Group.call(this, game);
@@ -128,6 +126,24 @@ function updateNinjaBots(bot) {
 	} else if ( bot.facing == 'right' ) {
 
 		bot.animations.play('float-right');
+
+	}
+
+	// Dissappear as they come close to Player
+	var playerBotYdiff = playerPosY - bot.y;
+	var playerBotXdiff = playerPosX - bot.x;
+
+	if ( playerBotYdiff < 250 && playerBotYdiff > -250 && bot.exists && playerBotXdiff < 250 && playerBotXdiff > -250 ) {
+
+		if ( bot.alpha > 0 ) {
+			bot.alpha -= 0.1;
+		}
+
+	} else {
+
+		if ( bot.alpha < 1 ) {
+			bot.alpha += 0.1;
+		}
 
 	}
 	

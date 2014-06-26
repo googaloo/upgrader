@@ -211,7 +211,7 @@
 			"file": "js/ninjaBot.js",
 			"settings":
 			{
-				"buffer_size": 3259,
+				"buffer_size": 4159,
 				"line_ending": "Unix"
 			}
 		},
@@ -545,6 +545,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"300",
+			"200",
+			"75",
 			".play",
 			"JumperBot",
 			"sprite",
@@ -669,10 +672,7 @@
 			"create",
 			"create\n\n\ncreate",
 			"artCount",
-			"artCount\n\n\n\n\nartCount\nartCount",
-			"artcount",
-			"createArticle",
-			"create"
+			"artCount\n\n\n\n\nartCount\nartCount"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -839,8 +839,8 @@
 						"selection":
 						[
 							[
-								245,
-								245
+								1728,
+								1728
 							]
 						],
 						"settings":
@@ -953,7 +953,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 278.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1232,8 +1232,8 @@
 						"selection":
 						[
 							[
-								1904,
-								1904
+								2843,
+								2777
 							]
 						],
 						"settings":
@@ -1346,7 +1346,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 248.0,
+						"translation.y": 1790.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1356,15 +1356,15 @@
 					"file": "js/ninjaBot.js",
 					"settings":
 					{
-						"buffer_size": 3259,
+						"buffer_size": 4159,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								297,
-								297
+								2936,
+								2936
 							]
 						],
 						"settings":
@@ -1608,7 +1608,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 491.0,
+						"translation.y": 512.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
