@@ -2,13 +2,15 @@ var JumperBot = function(game, image, num_bots) {
 
 	this.game = game;
 
-	Phaser.Group.call(this, this.game, 0, 0, 'jumperBot');
+	Phaser.Group.call(this, this.game, 0, 0, 'jumperBfot');
+
+	this.enableBody = true;
 
 	for ( var i = 0; i < num_bots; i++ ) {
 
 		sprite = this.create(this.game.world.randomX, this.game.world.randomY, image);
 
-        sprite.body.collideWorldBounds = true;
+        //sprite.body.collideWorldBounds = true;
 		sprite.animations.add('jump-left', [3,1,2,0], 12, false);
 		sprite.animations.add('jump-right', [4,6,5,7], 12, false);
 		sprite.animations.add('idle', [1], 10, false);
@@ -19,7 +21,11 @@ var JumperBot = function(game, image, num_bots) {
 		sprite.jumperBullets.createMultiple(10, 'laser');
 		sprite.jumperFireTime = this.game.time.now + 200;
 
-		sprite.fire = function() {
+		sprite.fire = fire;
+
+		function fire () {
+
+			console.log('fire!');
 
 			var singleShot = sprite.jumperBullets.getFirstExists(false);
 
@@ -52,14 +58,12 @@ JumperBot.prototype.constructor = JumperBot;
 
 JumperBot.prototype.update = function() {
 
-	this.forEach(updateJumperBots, this, false, 'poop');
+	this.forEach(updateJumperBots, this, true);
 
 }
 
 // Update for each JumperBot
-function updateJumperBots(bot, poo) {
-
-	console.log(bot);
+function updateJumperBots(bot) {
 
 	var playerPosX = player.body.x;
 	var playerPosY = player.body.y;
@@ -69,16 +73,18 @@ function updateJumperBots(bot, poo) {
 	this.game.physics.collide(bot.jumperBullets, layer, layerShoot);
 	this.game.physics.overlap(bot.jumperBullets, player.shield, jumperBulletShield);
 
-	if ( playerPosX > bot.x ) {
+	if ( playerPosX > bot.x && bot.body.touching.down ) {
 		bot.facing = 'right';
 	}
 
-	if ( playerPosX < bot.x ) {
+	if ( playerPosX < bot.x && bot.body.touching.down ) {
 		bot.facing = 'left';
 	}
 
 	// JUMP
 	if ( bot.body.touching.down ) {
+
+		console.log('touching down');
 
 		if ( bot.facing == 'left' ) {
 
@@ -100,7 +106,7 @@ function updateJumperBots(bot, poo) {
 	var playerBotYdiff = playerPosY - bot.y;
 	if ( playerBotYdiff < 20 && playerBotYdiff > -20 && bot.exists ) {
 
-		bot.fire();
+		bot.fire;
 
 	}
 

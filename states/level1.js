@@ -18,7 +18,8 @@ Level1.prototype = {
   preload: function() {
 
 	this.game.load.tilemap('level1', 'assets/cave_tilemap.json', null, Phaser.Tilemap.TILED_JSON);
-	this.game.load.tileset('tiles', 'assets/cave_tiles.png', 32, 39);
+	this.game.load.image('tiles', 'assets/cave_tiles.png');
+	//this.game.load.tileset('tiles', 'assets/cave_tiles.png', 32, 39);
 
 	this.game.load.spritesheet('player', 'assets/player.png', 182, 86);
 	this.game.load.spritesheet('bottomBooster', 'assets/bottom-booster.png', 61, 44);
@@ -42,7 +43,8 @@ Level1.prototype = {
 
 	// MAP
 	map = this.game.add.tilemap('level1');
-	tileset = this.game.add.tileset('tiles');
+	//tileset = this.game.add.tileset('tiles');
+	map.addTileSetImage('level1', 'tiles');
 	tileset.setCollisionRange(0, tileset.total - 1, true, true, true, true);
 	tileset.setCollision(6, false, false, false, false);
 	layer = this.game.add.tilemapLayer(0,0,800,600,tileset,map,0);

@@ -2,9 +2,9 @@ var Player = function(game, x, y) {
 
 	this.game = game;
 
-	Phaser.Sprite.call(this, game, x, y, 'player');
+	Phaser.Sprite.call(this, this.game, x, y, 'player');
 
-	this.playerCursors = game.input.keyboard.createCursorKeys();
+	this.playerCursors = this.game.input.keyboard.createCursorKeys();
 
 	this.body.collideWorldBounds = true;
 	this.animations.add('right', [0], 10, false);
@@ -15,13 +15,14 @@ var Player = function(game, x, y) {
 	this.body.maxVelocity = 175;
 	this.canMove = true; // For shield stop
 	this.facing = 'right';
-	game.camera.follow(this);
+	this.game.camera.follow(this);
+	this.game.camera.setBoundsToWorld();
 
 	// SHIELD ////////////////////////////////////////////////////////////////////////////////
-	shieldButton = game.input.keyboard.addKey(Phaser.Keyboard.SHIFT);
+	shieldButton = this.game.input.keyboard.addKey(Phaser.Keyboard.SHIFT);
 
 	this.shieldOpen = false;
-	this.shield = game.add.sprite(0, 0, 'playerShield');
+	this.shield = this.game.add.sprite(0, 0, 'playerShield');
 	this.shield.scale.x = 0.1;
 	this.shield.scale.y = 0.1;
 	this.shield.anchor.x = 0.5;
@@ -29,7 +30,7 @@ var Player = function(game, x, y) {
 	this.shield.visible = false;
 
 	// BLASTER EMITTER
-	this.blasterEmitter = game.add.emitter(this.x, this.y);
+	this.blasterEmitter = this.game.add.emitter(this.x, this.y);
 	this.blasterEmitter.makeParticles('playerBlasterEmitter');
 	this.blasterEmitter.gravity = 10;
 	this.blasterEmitter.bounce.x = 0.3;
@@ -37,27 +38,27 @@ var Player = function(game, x, y) {
 	//this.blasterBurst = blasterBurst;
 
 	// LASER (x, y, type of laser (ie standard, rapid, continuious)) /////////////////////////
-	this.laser = new Laser(game, 'laser');
+	this.laser = new Laser(this.game, 'laser');
 
 	// FIRING ////////////////////////////////////////////////////////////////////////////////
 	this.blasterTime = 0;
-	fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+	fireButton = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 	fireButton.onDown.add(this.blasterBurst, this);
 
-	playerBlast = game.add.sprite(this.x, this.y, 'playerBlast1');
+	playerBlast = this.game.add.sprite(this.x, this.y, 'playerBlast1');
 	playerBlast.anchor.x = 0.5;
 	playerBlast.anchor.y = 0.5;
 	playerBlast.visible = false;
 
 	// BOTTOMBOOSTER ////////////////////////////////////////////////////////////////////////////////
-	bottomBooster = game.add.sprite(0, 0, 'bottomBooster');
+	bottomBooster = this.game.add.sprite(0, 0, 'bottomBooster');
 	bottomBooster.scale.x = 0.75;
 	bottomBooster.scale.y = 0.75;
 	bottomBooster.animations.add('burn', [1,2,3,4,5,6], 10, true);
 	bottomBooster.animations.add('idle', [0]);
 
 	// SIDEBOOSTER ////////////////////////////////////////////////////////////////////////////////
-	sideBooster = game.add.sprite(0, 0, 'sideBooster');
+	sideBooster = this.game.add.sprite(0, 0, 'sideBooster');
 	sideBooster.scale.x = 0.75;
 	sideBooster.scale.y = 0.75;
 	sideBooster.animations.add('burn', [1,2,3,4,5], 8, true);
