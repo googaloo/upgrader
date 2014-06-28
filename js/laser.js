@@ -1,13 +1,15 @@
 Laser = function(game, image) {
 
-	Phaser.Group.call(this, game);
+	this.game = game;
+
+	Phaser.Group.call(this, this.game);
 
 	this.createMultiple(10, image);
 	this.setAll('anchor.y', 0.5);
 	this.setAll('outofBoundsKill', true);
 
 	// LASER EXPLOSION ON COLLIDE
-	this.laserEmitter = game.add.emitter(this.x, this.y);
+	this.laserEmitter = this.game.add.emitter(this.x, this.y);
 	this.laserEmitter.makeParticles('playerBlasterEmitter');
 	this.laserEmitter.gravity = 10;
 	this.laserEmitter.bounce = 20;
@@ -25,11 +27,11 @@ Laser.prototype.fire = function() {
 
 	if ( singleLaser ) {
 
-		if ( player._facing == 'right' ) {
-			singleLaser.reset(player._sprite.x + (player._sprite.body.width - 30), player._sprite.y + 60);
+		if ( player.facing == 'right' ) {
+			singleLaser.reset(player.x + (player.body.width - 30), player.y + 60);
 			singleLaser.body.velocity.x = 2000;
-		} else if ( player._facing == 'left' ) {
-			singleLaser.reset(player._sprite.x, player._sprite.y + 60);
+		} else if ( player.facing == 'left' ) {
+			singleLaser.reset(player.x, player.y + 60);
 			singleLaser.body.velocity.x = -2000;
 		}
 
@@ -72,7 +74,7 @@ function updateLasers(singleLaser) {
 
 	var laserV = singleLaser.body.velocity.x;
 
-	if ( game.physics.collide(singleLaser, layer) ) {
+	if ( this.game.physics.collide(singleLaser, layer) ) {
 
 		player.laser.laserExplode(singleLaser, laserV);
 

@@ -1,14 +1,13 @@
-var jumperFireTime,
-	jumperFire;
+var JumperBot = function(game, image, num_bots) {
 
+	this.game = game;
 
-JumperBot = function(game, image, num_bots) {
-
-	Phaser.Group.call(this, game);
+	Phaser.Group.call(this, this.game, 0, 0, 'jumperBot');
 
 	for ( var i = 0; i < num_bots; i++ ) {
 
-        var sprite = this.create(game.world.randomX, game.world.randomY, image);
+		sprite = this.create(this.game.world.randomX, this.game.world.randomY, image);
+
         sprite.body.collideWorldBounds = true;
 		sprite.animations.add('jump-left', [3,1,2,0], 12, false);
 		sprite.animations.add('jump-right', [4,6,5,7], 12, false);
@@ -16,31 +15,29 @@ JumperBot = function(game, image, num_bots) {
 		sprite.body.gravity.y = 10;
 		sprite.facing = 'right';
 
-		sprite.jumperBullets = game.add.group();
+		sprite.jumperBullets = this.game.add.group();
 		sprite.jumperBullets.createMultiple(10, 'laser');
-		sprite.jumperFireTime = game.time.now + 200;
+		sprite.jumperFireTime = this.game.time.now + 200;
 
 		sprite.fire = function() {
 
-			console.log();
+			var singleShot = sprite.jumperBullets.getFirstExists(false);
 
-			var singleShot = this.jumperBullets.getFirstExists(false);
+			if ( singleShot && this.game.time.now > sprite.jumperFireTime ) {
 
-			if ( singleShot && game.time.now > this.jumperFireTime ) {
+				if ( sprite.facing == 'left' ) {
 
-				if ( this.facing == 'left' ) {
-
-					singleShot.reset(this.x, this.y);
+					singleShot.reset(sprite.x, sprite.y);
 					singleShot.body.velocity.x = jumperBulletSpeed * -1;
 
-				} else if ( this.facing == 'right' ) {
+				} else if ( sprite.facing == 'right' ) {
 
-					singleShot.reset(this.x, this.y);
+					singleShot.reset(sprite.x, sprite.y);
 					singleShot.body.velocity.x = jumperBulletSpeed;
 
 				}
 
-				this.jumperFireTime = game.time.now + 200;
+				sprite.jumperFireTime = this.game.time.now + 200;
 
 			}
 
@@ -52,48 +49,25 @@ JumperBot = function(game, image, num_bots) {
 
 JumperBot.prototype = Object.create(Phaser.Group.prototype);
 JumperBot.prototype.constructor = JumperBot;
+
 JumperBot.prototype.update = function() {
 
-	this.forEach(updateJumperBots, this, false);
-
-}
-
-JumperBot.prototype.fire = function(bot, dir) {
-
-	console.log('fire!');
-
-	var singleShot = bot.jumperBullets.getFirstExists(false);
-
-	if ( singleShot && game.time.now > jumperFireTime ) {
-
-		if ( dir == 'left' ) {
-
-			singleShot.reset(bot.x, bot.y);
-			singleShot.body.velocity.x = jumperBulletSpeed * -1;
-
-		} else if ( dir == 'right' ) {
-
-			singleShot.reset(bot.x, bot.y);
-			singleShot.body.velocity.x = jumperBulletSpeed;
-
-		}
-
-		jumperFireTime = game.time.now + 200;
-
-	}
+	this.forEach(updateJumperBots, this, false, 'poop');
 
 }
 
 // Update for each JumperBot
-function updateJumperBots(bot) {
+function updateJumperBots(bot, poo) {
 
-	var playerPosX = player._sprite.body.x;
-	var playerPosY = player._sprite.body.y;
+	console.log(bot);
 
-	game.physics.collide(bot, layer);
-	game.physics.overlap(bot, player.laser, jumperBotLaserShot);
-	game.physics.collide(bot.jumperBullets, layer, layerShoot);
-	game.physics.overlap(bot.jumperBullets, player._shield, jumperBulletShield);
+	var playerPosX = player.body.x;
+	var playerPosY = player.body.y;
+
+	this.game.physics.collide(bot, layer);
+	this.game.physics.overlap(bot, player.laser, jumperBotLaserShot);
+	this.game.physics.collide(bot.jumperBullets, layer, layerShoot);
+	this.game.physics.overlap(bot.jumperBullets, player.shield, jumperBulletShield);
 
 	if ( playerPosX > bot.x ) {
 		bot.facing = 'right';
