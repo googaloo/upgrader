@@ -6,6 +6,8 @@ turretDirection = 'right';
 
 Turret = function(x,y) {
 
+	game.physics.enable(this, Phaser.Physics.ARCADE);
+
 	this._turret1Base = game.add.sprite(x, y, 'turret1Base');
 
 	this._turretCannon = game.add.sprite(0, 0, 'turretCannon');

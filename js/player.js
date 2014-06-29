@@ -4,17 +4,19 @@ var Player = function(game, x, y) {
 
 	Phaser.Sprite.call(this, this.game, x, y, 'player');
 
+	game.physics.enable(this, Phaser.Physics.ARCADE);
+
 	this.enableBody = true;
 
 	this.playerCursors = this.game.input.keyboard.createCursorKeys();
 
-	this.body.collideWorldBounds = true;
+ 	this.collideWorldBounds = true;
 	this.animations.add('right', [0], 10, false);
 	this.animations.add('left', [1], 10, false);
 	this.scale.x = 0.75;
 	this.scale.y = 0.75;
 	this.facing = Phaser.RIGHT;
-	this.body.maxVelocity = 175;
+	this.maxVelocity = 175;
 	this.canMove = true; // For shield stop
 	this.facing = 'right';
 	this.game.camera.follow(this);
@@ -94,8 +96,8 @@ Player.prototype.blasterBurst = function blasterBurst() {
 
 Player.prototype.update = function() {
 
-	this.game.physics.collide(this, layer);
-	this.game.physics.collide(this._blasterEmitter, layer);
+	this.game.physics.arcade.collide(this, layer);
+	this.game.physics.arcade.collide(this.blasterEmitter, layer);
 	this.laser.update();
 	
 

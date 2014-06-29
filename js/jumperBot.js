@@ -2,7 +2,9 @@ var JumperBot = function(game, image, num_bots) {
 
 	this.game = game;
 
-	Phaser.Group.call(this, this.game, 0, 0, 'jumperBfot');
+	Phaser.Group.call(this, this.game, 0, 0, 'jumperBot');
+
+	game.physics.enable(this, Phaser.Physics.ARCADE);
 
 	this.enableBody = true;
 
@@ -65,8 +67,8 @@ JumperBot.prototype.update = function() {
 // Update for each JumperBot
 function updateJumperBots(bot) {
 
-	var playerPosX = player.body.x;
-	var playerPosY = player.body.y;
+	var playerPosX = player.x;
+	var playerPosY = player.y;
 
 	this.game.physics.collide(bot, layer);
 	this.game.physics.overlap(bot, player.laser, jumperBotLaserShot);

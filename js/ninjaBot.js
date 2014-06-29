@@ -2,6 +2,8 @@ NinjaBot = function(game, image, num_bots) {
 
 	Phaser.Group.call(this, game);
 
+	game.physics.enable(this, Phaser.Physics.ARCADE);
+
 	for ( var i = 0; i < num_bots; i++ ) {
 
         var sprite = this.create(game.world.randomX, game.world.randomY, image);

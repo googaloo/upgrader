@@ -64,7 +64,7 @@ Level1.prototype = {
 	this.game.add.existing(player);
 
 	// JumperBots
-	jumperBotGroup = new JumperBot(this.game, 'jumperBot', 2);
+	//jumperBotGroup = new JumperBot(this.game, 'jumperBot', 2);
 	//this.game.add.existing(jumperBotGroup);
 
 	// // NinjaBots
@@ -79,7 +79,7 @@ Level1.prototype = {
 
 	//player.update();
 	// turret.update();
-	jumperBotGroup.update();
+	//jumperBotGroup.update();
 	// ninjaBotGroup.update();
 
   }

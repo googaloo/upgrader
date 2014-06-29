@@ -4,6 +4,10 @@ Laser = function(game, image) {
 
 	Phaser.Group.call(this, this.game);
 
+	game.physics.enable(this, Phaser.Physics.ARCADE);
+
+	this.enableBody = true;
+
 	this.createMultiple(10, image);
 	this.setAll('anchor.y', 0.5);
 	this.setAll('outofBoundsKill', true);
@@ -74,7 +78,7 @@ function updateLasers(singleLaser) {
 
 	var laserV = singleLaser.body.velocity.x;
 
-	if ( this.game.physics.collide(singleLaser, layer) ) {
+	if ( this.game.physics.arcade.collide(singleLaser, layer) ) {
 
 		player.laser.laserExplode(singleLaser, laserV);
 
