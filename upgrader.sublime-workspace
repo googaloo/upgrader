@@ -171,16 +171,16 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1064,
-				"line_ending": "Unix"
+				"buffer_size": 1192,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "js/game.js",
 			"settings":
 			{
-				"buffer_size": 2035,
-				"line_ending": "Unix"
+				"buffer_size": 208,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -195,16 +195,32 @@
 			"file": "js/player.js",
 			"settings":
 			{
-				"buffer_size": 7703,
-				"line_ending": "Unix"
+				"buffer_size": 7312,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/phaser.min.js",
+			"settings":
+			{
+				"buffer_size": 647002,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "states/level1.js",
+			"settings":
+			{
+				"buffer_size": 2334,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "js/jumperBot.js",
 			"settings":
 			{
-				"buffer_size": 3126,
-				"line_ending": "Unix"
+				"buffer_size": 2834,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -219,8 +235,8 @@
 			"file": "js/laser.js",
 			"settings":
 			{
-				"buffer_size": 1934,
-				"line_ending": "Unix"
+				"buffer_size": 1927,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -545,6 +561,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"game",
+			"bot",
+			"Bot",
+			"bot",
 			"300",
 			"200",
 			"75",
@@ -668,11 +688,7 @@
 			"border",
 			"[]",
 			"check",
-			"prop",
-			"create",
-			"create\n\n\ncreate",
-			"artCount",
-			"artCount\n\n\n\n\nartCount\nartCount"
+			"prop"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -701,15 +717,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 1064,
+						"buffer_size": 1192,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								581,
-								581
+								0,
+								0
 							]
 						],
 						"settings":
@@ -832,15 +848,15 @@
 					"file": "js/game.js",
 					"settings":
 					{
-						"buffer_size": 2035,
+						"buffer_size": 208,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1728,
-								1728
+								0,
+								0
 							]
 						],
 						"settings":
@@ -953,7 +969,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 278.0,
+						"translation.y": 171.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1094,15 +1110,15 @@
 					"file": "js/player.js",
 					"settings":
 					{
-						"buffer_size": 7703,
+						"buffer_size": 7312,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1927,
-								1927
+								548,
+								548
 							]
 						],
 						"settings":
@@ -1222,18 +1238,71 @@
 				},
 				{
 					"buffer": 4,
-					"file": "js/jumperBot.js",
+					"file": "js/phaser.min.js",
 					"settings":
 					{
-						"buffer_size": 3126,
+						"buffer_size": 647002,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2843,
-								2777
+								129276,
+								129276
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 279.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "states/level1.js",
+					"settings":
+					{
+						"buffer_size": 2334,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1038,
+								1038
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 342.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "js/jumperBot.js",
+					"settings":
+					{
+						"buffer_size": 2834,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								122,
+								122
 							]
 						],
 						"settings":
@@ -1346,13 +1415,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1790.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "js/ninjaBot.js",
 					"settings":
 					{
@@ -1483,19 +1552,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "js/laser.js",
 					"settings":
 					{
-						"buffer_size": 1934,
+						"buffer_size": 1927,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								473,
-								474
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1614,7 +1683,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "js/global.js",
 					"settings":
 					{

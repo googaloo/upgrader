@@ -4,6 +4,8 @@ var Player = function(game, x, y) {
 
 	Phaser.Sprite.call(this, this.game, x, y, 'player');
 
+	this.enableBody = true;
+
 	this.playerCursors = this.game.input.keyboard.createCursorKeys();
 
 	this.body.collideWorldBounds = true;
