@@ -1,8 +1,4 @@
-var platforms;
 var map;
-var ground;
-var map;
-var tileset;
 var layer;
 var player;
 var jumperBotGroup;
@@ -12,7 +8,6 @@ var turret;
 function Level1(game) {
 	this.game = game;
 	var map;
-	var layer;
 }
 
 Level1.prototype = {
@@ -45,12 +40,13 @@ Level1.prototype = {
   create: function() {
 
 	// MAP
-	this.map = this.game.add.tilemap('level1'); // From key of loaded JSON
-	this.map.addTilesetImage('cave_tiles', 'tiles-1'); // From the JSON (Tiled) and loaded image
-	this.map.setCollisionBetween(0, 5, true);
+	map = this.game.add.tilemap('level1'); // From key of loaded JSON
+	map.addTilesetImage('cave_tiles', 'tiles-1'); // From the JSON (Tiled) and loaded image
+	
 
-	this.layer = this.map.createLayer('Tile Layer 1'); // From the JSON (Tiled)
-	this.layer.resizeWorld();
+	layer = map.createLayer('Tile Layer 1'); // From the JSON (Tiled)
+	map.setCollisionBetween(0, 6, true);
+	layer.resizeWorld();
 	//map = this.game.add.tileSprite(0, 0, 640, 480, 'tiles');
 	//tileset = this.game.add.tileset('tiles');
 	//map.addTileSetImage('level1', 'tiles');
@@ -64,7 +60,7 @@ Level1.prototype = {
 	this.game.add.existing(player);
 
 	// JumperBots
-	//jumperBotGroup = new JumperBot(this.game, 'jumperBot', 2);
+	jumperBotGroup = new JumperBot(this.game, 'jumperBot', 2);
 	//this.game.add.existing(jumperBotGroup);
 
 	// // NinjaBots
@@ -77,9 +73,9 @@ Level1.prototype = {
 
   update: function() {
 
-	//player.update();
+	// player.update();
 	// turret.update();
-	//jumperBotGroup.update();
+	// jumperBotGroup.update();
 	// ninjaBotGroup.update();
 
   }

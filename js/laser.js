@@ -4,7 +4,7 @@ Laser = function(game, image) {
 
 	Phaser.Group.call(this, this.game);
 
-	game.physics.enable(this, Phaser.Physics.ARCADE);
+	this.game.physics.enable(this, Phaser.Physics.ARCADE);
 
 	this.enableBody = true;
 
@@ -32,10 +32,10 @@ Laser.prototype.fire = function() {
 	if ( singleLaser ) {
 
 		if ( player.facing == 'right' ) {
-			singleLaser.reset(player.x + (player.body.width - 30), player.y + 60);
+			singleLaser.reset(player.body.x + (player.body.width - 30), player.body.y + 60);
 			singleLaser.body.velocity.x = 2000;
 		} else if ( player.facing == 'left' ) {
-			singleLaser.reset(player.x, player.y + 60);
+			singleLaser.reset(player.body.x, player.body.y + 60);
 			singleLaser.body.velocity.x = -2000;
 		}
 
@@ -58,8 +58,8 @@ Laser.prototype.laserExplode = function(laser, laserV) {
 	}
 
 	if ( laserVelocity > 0 ) {
-		player.laser.laserEmitter.x = laser.x + (laser.body.width );
-		player.laser.laserEmitter.y = laser.y;
+		player.laser.laserEmitter.x = laser.body.x + (laser.body.width );
+		player.laser.laserEmitter.y = laser.body.y;
 		player.laser.laserEmitter.maxParticleSpeed.x = -550;
 		player.laser.laserEmitter.start(true, 200, null, 5);
 
@@ -79,6 +79,8 @@ function updateLasers(singleLaser) {
 	var laserV = singleLaser.body.velocity.x;
 
 	if ( this.game.physics.arcade.collide(singleLaser, layer) ) {
+
+		console.log('cheesitt');
 
 		player.laser.laserExplode(singleLaser, laserV);
 

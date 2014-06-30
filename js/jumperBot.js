@@ -70,10 +70,10 @@ function updateJumperBots(bot) {
 	var playerPosX = player.x;
 	var playerPosY = player.y;
 
-	this.game.physics.collide(bot, layer);
-	this.game.physics.overlap(bot, player.laser, jumperBotLaserShot);
-	this.game.physics.collide(bot.jumperBullets, layer, layerShoot);
-	this.game.physics.overlap(bot.jumperBullets, player.shield, jumperBulletShield);
+	this.game.physics.arcade.collide(bot, layer);
+	this.game.physics.arcade.overlap(bot, player.laser, jumperBotLaserShot);
+	this.game.physics.arcade.collide(bot.jumperBullets, layer, layerShoot);
+	this.game.physics.arcade.overlap(bot.jumperBullets, player.shield, jumperBulletShield);
 
 	if ( playerPosX > bot.x && bot.body.touching.down ) {
 		bot.facing = 'right';
@@ -82,7 +82,7 @@ function updateJumperBots(bot) {
 	if ( playerPosX < bot.x && bot.body.touching.down ) {
 		bot.facing = 'left';
 	}
-
+console.log(bot.body.touching.down);
 	// JUMP
 	if ( bot.body.touching.down ) {
 
