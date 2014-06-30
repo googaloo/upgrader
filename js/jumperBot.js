@@ -4,19 +4,16 @@ var JumperBot = function(game, image, num_bots) {
 
 	Phaser.Group.call(this, this.game, 0, 0, 'jumperBot');
 
-	game.physics.enable(this, Phaser.Physics.ARCADE);
-
-	this.enableBody = true;
-
 	for ( var i = 0; i < num_bots; i++ ) {
 
-		sprite = this.create(this.game.world.randomX, this.game.world.randomY, image);
+		var sprite = this.create(this.game.world.randomX, this.game.world.randomY, image);
 
-        //sprite.body.collideWorldBounds = true;
+		this.game.physics.enable(sprite, Phaser.Physics.ARCADE);
+
 		sprite.animations.add('jump-left', [3,1,2,0], 12, false);
 		sprite.animations.add('jump-right', [4,6,5,7], 12, false);
 		sprite.animations.add('idle', [1], 10, false);
-		sprite.body.gravity.y = 10;
+		sprite.body.gravity.y = 100;
 		sprite.facing = 'right';
 
 		sprite.jumperBullets = this.game.add.group();
@@ -82,7 +79,7 @@ function updateJumperBots(bot) {
 	if ( playerPosX < bot.x && bot.body.touching.down ) {
 		bot.facing = 'left';
 	}
-console.log(bot.body.touching.down);
+
 	// JUMP
 	if ( bot.body.touching.down ) {
 

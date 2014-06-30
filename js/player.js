@@ -4,9 +4,7 @@ var Player = function(game, x, y) {
 
 	Phaser.Sprite.call(this, this.game, x, y, 'player');
 
-	game.physics.enable(this, Phaser.Physics.ARCADE);
-
-	this.enableBody = true;
+	this.game.physics.enable(this, Phaser.Physics.ARCADE);
 
 	this.playerCursors = this.game.input.keyboard.createCursorKeys();
 
@@ -19,8 +17,8 @@ var Player = function(game, x, y) {
 	this.maxVelocity = 175;
 	this.canMove = true; // For shield stop
 	this.facing = 'right';
-	this.game.camera.follow(this);
-	this.game.camera.setBoundsToWorld();
+	//this.game.camera.follow(this);
+	//this.game.camera.setBoundsToWorld();
 
 	// SHIELD ////////////////////////////////////////////////////////////////////////////////
 	shieldButton = this.game.input.keyboard.addKey(Phaser.Keyboard.SHIFT);
@@ -43,6 +41,8 @@ var Player = function(game, x, y) {
 
 	// LASER (x, y, type of laser (ie standard, rapid, continuious)) /////////////////////////
 	this.laser = new Laser(this.game, 'laser');
+	game.physics.arcade.enable(this.laser);
+	this.laser.outOfBoundsKill = true;
 
 	// FIRING ////////////////////////////////////////////////////////////////////////////////
 	this.blasterTime = 0;
@@ -98,7 +98,6 @@ Player.prototype.update = function() {
 
 	this.game.physics.arcade.collide(this, layer);
 	this.game.physics.arcade.collide(this.blasterEmitter, layer);
-	this.laser.update();
 	
 
 

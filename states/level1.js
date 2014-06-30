@@ -39,13 +39,16 @@ Level1.prototype = {
 
   create: function() {
 
+  	
+  	this.game.physics.startSystem(Phaser.Physics.ARCADE);
+
 	// MAP
 	map = this.game.add.tilemap('level1'); // From key of loaded JSON
 	map.addTilesetImage('cave_tiles', 'tiles-1'); // From the JSON (Tiled) and loaded image
 	
 
 	layer = map.createLayer('Tile Layer 1'); // From the JSON (Tiled)
-	map.setCollisionBetween(0, 6, true);
+	map.setCollisionBetween(0, 5);
 	layer.resizeWorld();
 	//map = this.game.add.tileSprite(0, 0, 640, 480, 'tiles');
 	//tileset = this.game.add.tileset('tiles');
@@ -58,10 +61,11 @@ Level1.prototype = {
 	// PLAYER
 	player = new Player(this.game, (this.game.world.width / 2) - 250, (this.game.world.height / 2));
 	this.game.add.existing(player);
+	player.body.collideWorldBounds = true;
 
 	// JumperBots
-	jumperBotGroup = new JumperBot(this.game, 'jumperBot', 2);
-	//this.game.add.existing(jumperBotGroup);
+	jumperBotGroup = new JumperBot(this.game, 'jumperBot', 5);
+	this.game.add.existing(jumperBotGroup);
 
 	// // NinjaBots
 	// ninjaBotGroup = new NinjaBot(this.game, 'ninjaBot', 2);
@@ -73,6 +77,8 @@ Level1.prototype = {
 
   update: function() {
 
+
+  	this.game.camera.focusOnXY(player.x, player.y);
 	// player.update();
 	// turret.update();
 	// jumperBotGroup.update();
