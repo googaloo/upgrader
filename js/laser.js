@@ -29,8 +29,6 @@ Laser.prototype.fire = function() {
 
 	var singleLaser = this.getFirstExists(false);
 
-	console.log(singleLaser);
-
 	if ( singleLaser ) {
 
 		if ( player.facing == 'right' ) {
@@ -81,8 +79,6 @@ function updateLasers(singleLaser) {
 	var laserV = singleLaser.body.velocity.x;
 
 	if ( this.game.physics.arcade.collide(singleLaser, layer) ) {
-
-		console.log('shot layer');
 
 		player.laser.laserExplode(singleLaser, laserV);
 

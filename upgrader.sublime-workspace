@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"blast",
+				"blasterBurst"
+			],
+			[
 				"ninjaBot",
 				"ninjaBotGroup"
 			],
@@ -172,7 +176,7 @@
 			"settings":
 			{
 				"buffer_size": 1192,
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -180,14 +184,38 @@
 			"settings":
 			{
 				"buffer_size": 208,
-				"line_ending": "Windows"
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "states/menu.js",
+			"settings":
+			{
+				"buffer_size": 218,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "states/level1.js",
+			"settings":
+			{
+				"buffer_size": 2877,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/cave_tilemap.json",
+			"settings":
+			{
+				"buffer_size": 2497,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "js/turrets.js",
 			"settings":
 			{
-				"buffer_size": 1482,
+				"buffer_size": 1534,
 				"line_ending": "Unix"
 			}
 		},
@@ -195,39 +223,23 @@
 			"file": "js/player.js",
 			"settings":
 			{
-				"buffer_size": 7312,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/phaser.min.js",
-			"settings":
-			{
-				"buffer_size": 647002,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "states/level1.js",
-			"settings":
-			{
-				"buffer_size": 2334,
-				"line_ending": "Windows"
+				"buffer_size": 7432,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "js/jumperBot.js",
 			"settings":
 			{
-				"buffer_size": 2834,
-				"line_ending": "Windows"
+				"buffer_size": 2894,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "js/ninjaBot.js",
 			"settings":
 			{
-				"buffer_size": 4159,
+				"buffer_size": 4211,
 				"line_ending": "Unix"
 			}
 		},
@@ -235,8 +247,8 @@
 			"file": "js/laser.js",
 			"settings":
 			{
-				"buffer_size": 1927,
-				"line_ending": "Windows"
+				"buffer_size": 2047,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -561,10 +573,44 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"game",
+			"touching",
 			"bot",
 			"Bot",
 			"bot",
+			"touching",
+			"1",
+			"1\n\n\n\n\n\n\n\n\n\n1",
+			"touching",
+			"jumper",
+			"this",
+			"sprite",
+			"game",
+			"sprite",
+			"game",
+			"sprite",
+			"_facing",
+			"game",
+			"_sprite",
+			"_blasterBurst",
+			"blasterTime",
+			"shieldOpen",
+			"_shield",
+			"player",
+			"_sprite",
+			"_blasterEmitter",
+			"playerCursors",
+			"game",
+			"_facing",
+			"_canMove",
+			"_sprite",
+			"sprite",
+			"_sprite",
+			"game",
+			"this.game",
+			"_sprite",
+			"game",
+			"Menu",
+			"Boot",
 			"300",
 			"200",
 			"75",
@@ -654,41 +700,7 @@
 			"scale",
 			"cloud",
 			"id=\"cloud1\"",
-			"0",
-			"use",
-			"background",
-			"style",
-			"name",
-			"div",
-			"\ndiv",
-			"div",
-			"ajax",
-			"oct",
-			"img",
-			"oct",
-			"learn",
-			"volume",
-			"patent",
-			"oct",
-			"b5c",
-			"b5cb00",
-			"content",
-			"newsletters",
-			"consol",
-			"banner-img-url",
-			"submit",
-			"load",
-			"load\nload",
-			"load",
-			"load\n\nload",
-			"artCount",
-			"artCount\n",
-			"artCount",
-			"create",
-			"border",
-			"[]",
-			"check",
-			"prop"
+			"0"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -709,7 +721,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -724,8 +736,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								452,
+								452
 							]
 						],
 						"settings":
@@ -855,8 +867,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								170,
+								170
 							]
 						],
 						"settings":
@@ -969,25 +981,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 171.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "js/turrets.js",
+					"file": "states/menu.js",
 					"settings":
 					{
-						"buffer_size": 1482,
+						"buffer_size": 218,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								107,
+								107
 							]
 						],
 						"settings":
@@ -1096,8 +1108,7 @@
 							},
 							"codeintel_tooltips": "popup",
 							"sublime_auto_complete": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1107,18 +1118,18 @@
 				},
 				{
 					"buffer": 3,
-					"file": "js/player.js",
+					"file": "states/level1.js",
 					"settings":
 					{
-						"buffer_size": 7312,
+						"buffer_size": 2877,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								548,
-								548
+								1743,
+								1743
 							]
 						],
 						"settings":
@@ -1231,32 +1242,138 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 300.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "js/phaser.min.js",
+					"file": "assets/cave_tilemap.json",
 					"settings":
 					{
-						"buffer_size": 647002,
+						"buffer_size": 2497,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								129276,
-								129276
+								2313,
+								2313
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 279.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -1264,45 +1381,18 @@
 				},
 				{
 					"buffer": 5,
-					"file": "states/level1.js",
+					"file": "js/turrets.js",
 					"settings":
 					{
-						"buffer_size": 2334,
+						"buffer_size": 1534,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1038,
-								1038
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 342.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "js/jumperBot.js",
-					"settings":
-					{
-						"buffer_size": 2834,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								122,
-								122
+								1171,
+								1171
 							]
 						],
 						"settings":
@@ -1421,19 +1511,150 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "js/ninjaBot.js",
+					"buffer": 6,
+					"file": "js/player.js",
 					"settings":
 					{
-						"buffer_size": 4159,
+						"buffer_size": 7432,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2936,
-								2936
+								441,
+								443
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 788.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "js/jumperBot.js",
+					"settings":
+					{
+						"buffer_size": 2894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								844,
+								844
 							]
 						],
 						"settings":
@@ -1553,10 +1774,10 @@
 				},
 				{
 					"buffer": 8,
-					"file": "js/laser.js",
+					"file": "js/ninjaBot.js",
 					"settings":
 					{
-						"buffer_size": 1927,
+						"buffer_size": 4211,
 						"regions":
 						{
 						},
@@ -1677,13 +1898,144 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 512.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 9,
+					"file": "js/laser.js",
+					"settings":
+					{
+						"buffer_size": 2047,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								276,
+								239
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
 					"file": "js/global.js",
 					"settings":
 					{
@@ -1857,11 +2209,11 @@
 		"selected_items":
 		[
 			[
-				"tilema",
+				"json",
 				"assets/cave_tilemap.json"
 			],
 			[
-				"json",
+				"tilema",
 				"assets/cave_tilemap.json"
 			],
 			[
@@ -2382,7 +2734,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 236.0,
 	"status_bar_visible": true
 }

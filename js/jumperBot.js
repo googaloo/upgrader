@@ -8,25 +8,27 @@ var JumperBot = function(game, image, num_bots) {
 
 		var sprite = this.create(this.game.world.randomX, this.game.world.randomY, image);
 
+		sprite.enableBody = true;
+
 		this.game.physics.enable(sprite, Phaser.Physics.ARCADE);
 
 		sprite.animations.add('jump-left', [3,1,2,0], 12, false);
 		sprite.animations.add('jump-right', [4,6,5,7], 12, false);
 		sprite.animations.add('idle', [1], 10, false);
-		sprite.body.gravity.y = 100;
+		sprite.body.gravity.y = 500;
 		sprite.facing = 'right';
 
 		sprite.jumperBullets = this.game.add.group();
 		sprite.jumperBullets.createMultiple(10, 'laser');
+
 		sprite.jumperFireTime = this.game.time.now + 200;
 
-		sprite.fire = fire;
-
-		function fire () {
+		sprite.fire = function() {
 
 			console.log('fire!');
 
 			var singleShot = sprite.jumperBullets.getFirstExists(false);
+			console.log(singleShot);
 
 			if ( singleShot && this.game.time.now > sprite.jumperFireTime ) {
 
@@ -50,12 +52,19 @@ var JumperBot = function(game, image, num_bots) {
 
 	}
 
+	this.setAll('outofBoundsKill', true);
+
 }
 
 JumperBot.prototype = Object.create(Phaser.Group.prototype);
 JumperBot.prototype.constructor = JumperBot;
 
 JumperBot.prototype.update = function() {
+
+	this.game.physics.arcade.overlap(this, layer);
+	this.game.physics.arcade.overlap(this, player.laser, jumperBotLaserShot);
+	this.game.physics.arcade.collide(this.jumperBullets, layer, layerShoot);
+	this.game.physics.arcade.overlap(this.jumperBullets, player.shield, jumperBulletShield);
 
 	this.forEach(updateJumperBots, this, true);
 
@@ -67,23 +76,16 @@ function updateJumperBots(bot) {
 	var playerPosX = player.x;
 	var playerPosY = player.y;
 
-	this.game.physics.arcade.collide(bot, layer);
-	this.game.physics.arcade.overlap(bot, player.laser, jumperBotLaserShot);
-	this.game.physics.arcade.collide(bot.jumperBullets, layer, layerShoot);
-	this.game.physics.arcade.overlap(bot.jumperBullets, player.shield, jumperBulletShield);
-
-	if ( playerPosX > bot.x && bot.body.touching.down ) {
+	if ( playerPosX > bot.x && bot.body.blocked.down ) {
 		bot.facing = 'right';
 	}
 
-	if ( playerPosX < bot.x && bot.body.touching.down ) {
+	if ( playerPosX < bot.x && bot.body.blocked.down ) {
 		bot.facing = 'left';
 	}
 
 	// JUMP
-	if ( bot.body.touching.down ) {
-
-		console.log('touching down');
+	if ( bot.body.blocked.down ) {
 
 		if ( bot.facing == 'left' ) {
 
@@ -105,7 +107,7 @@ function updateJumperBots(bot) {
 	var playerBotYdiff = playerPosY - bot.y;
 	if ( playerBotYdiff < 20 && playerBotYdiff > -20 && bot.exists ) {
 
-		bot.fire;
+		bot.fire();
 
 	}
 

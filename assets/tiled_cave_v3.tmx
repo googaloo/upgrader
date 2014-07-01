@@ -3,7 +3,7 @@
  <tileset firstgid="1" name="cave_tiles" tilewidth="32" tileheight="39">
   <image source="cave_tiles.png" width="160" height="195"/>
  </tileset>
- <layer name="Tile Layer 1" width="30" height="20">
+ <layer name="Level 1 Layer" width="30" height="20">
   <data encoding="base64" compression="zlib">
    eJxjYWBgYKczZoPiUXsHn71MQMxMIWZBs5eRCHtZR1g4DwZ7yY1r9PjFhvHFOblxTal/R5q9A5WuRu0dtZdW9uIrs1jw2MuORx8xGF8eZsOjDwB2aA80
   </data>

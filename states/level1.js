@@ -15,7 +15,7 @@ Level1.prototype = {
   preload: function() {
 
 	this.game.load.tilemap('level1', 'assets/cave_tilemap.json', null, Phaser.Tilemap.TILED_JSON);
-	this.game.load.image('tiles-1', 'assets/cave_tiles.png');
+	this.game.load.image('cave-level-1', 'assets/cave_tiles.png');
 	//this.game.load.image('tiles', 'assets/cave_tiles.png');
 	//this.game.load.tileset('tiles', 'assets/cave_tiles.png', 32, 39);
 
@@ -44,12 +44,14 @@ Level1.prototype = {
 
 	// MAP
 	map = this.game.add.tilemap('level1'); // From key of loaded JSON
-	map.addTilesetImage('cave_tiles', 'tiles-1'); // From the JSON (Tiled) and loaded image
+	map.addTilesetImage('cave-level-1'); // From the JSON (Tiled) and loaded image
 	
 
-	layer = map.createLayer('Tile Layer 1'); // From the JSON (Tiled)
-	map.setCollisionBetween(0, 5);
+	layer = map.createLayer('Level 1 Layer'); // From the JSON (Tiled)
+	map.setCollisionBetween(1, 6);
 	layer.resizeWorld();
+	this.game.physics.arcade.enable(map);
+	this.game.physics.setBoundsToWorld();
 	//map = this.game.add.tileSprite(0, 0, 640, 480, 'tiles');
 	//tileset = this.game.add.tileset('tiles');
 	//map.addTileSetImage('level1', 'tiles');
